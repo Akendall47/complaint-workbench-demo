@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../static/app.css">
 <link rel="stylesheet" href="../static/layout.css">
 <link rel="stylesheet" href="../static/case.css">
+<script src="../static/static-site.js" defer></script>
 <script src="../static/app.js" defer></script>
 <link rel="stylesheet" href="../static/static-site.css">
 </head>
@@ -96,13 +97,13 @@
         <b>Urgency</b>
         <label>Mark as <select disabled name="urgent"><option value="1" selected>Urgent</option><option value="0">Not urgent</option></select></label>
         <label>Reason <input disabled name="reason" maxlength="500"></label>
-        <button disabled title="Read-only preview" type="submit">Save</button>
+        <button disabled title="Needs the full app. Try case AB-2026-00768 as Handler." type="submit">Save</button>
       </form>
       
       <form method="post" action="/cases/AB-2026-00768/department"><input type="hidden" name="version" value="0"><input type="hidden" name="step" value="2"><input type="hidden" name="all" value="0">
         <b>Department</b>
         <label>Department <select disabled name="department"><option selected>Fraud claims</option><option>Financial difficulty</option><option>Bereavement</option><option>Data protection</option><option>Mis-selling review</option><option>General service</option></select></label>
-        <button disabled title="Read-only preview" type="submit">Save</button>
+        <button disabled title="Needs the full app. Try case AB-2026-00768 as Handler." type="submit">Save</button>
       </form>
       
     </div>
@@ -133,7 +134,7 @@
     <details class="drop"><summary>Unmask</summary>
       <form class="drop-body" method="post" action="/cases/AB-2026-00768/unmask"><input type="hidden" name="version" value="0"><input type="hidden" name="step" value="2"><input type="hidden" name="all" value="0">
         <label>Reason (logged) <input disabled name="reason" maxlength="500"></label>
-        <button disabled title="Read-only preview" type="submit">Show unmasked</button>
+        <button disabled title="Needs the full app. Try case AB-2026-00768 as Handler." type="submit">Show unmasked</button>
       </form>
     </details>
   </div>
@@ -158,7 +159,7 @@
     <div class="fields">
     <label>Amount disputed <span class="chip warn">Missing</span><span class="money">£</span><input disabled name="f_amount_disputed" value="814.11" maxlength="300"></label><label>Date of transaction <span class="chip warn">Missing</span><input disabled name="f_date_of_transaction" value="29 September 2026" maxlength="300"></label><label>Merchant name <span class="chip warn">Missing</span><input disabled name="f_merchant_name" value="" maxlength="300"></label><label>Card last four <span class="chip warn">Missing</span><input disabled name="f_card_last_four" value="6970" maxlength="300"></label><label>Police reference <span class="chip warn">Missing</span><input disabled name="f_police_reference" value="PR-651479" maxlength="300"></label>
     </div>
-    <button disabled title="Read-only preview" type="submit">Save handover</button>
+    <button disabled title="Needs the full app. Try case AB-2026-00768 as Handler." type="submit">Save handover</button>
   </form>
   
 </section>
@@ -174,6 +175,6 @@
 </section>
 </div>
 </main>
-<footer class="footer">Read-only preview: buttons and forms are off here. Run the app for the full product. Not an Ankura product. All data synthetic.</footer>
+<footer class="footer">Preview: on case AB-2026-00768 (as Handler) every button that moves the case on works. Other buttons need the full app. Not an Ankura product. All data synthetic.</footer>
 </body>
 </html>
