@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="htmx-config" content='{"includeIndicatorStyles": false, "allowEval": false}'>
+<title>Team · Alder Bank complaints</title>
+<link rel="stylesheet" href="../static/app.css">
+<link rel="stylesheet" href="../static/layout.css">
+<link rel="stylesheet" href="../static/work.css">
+<script src="../static/app.js" defer></script>
+<link rel="stylesheet" href="../static/static-site.css">
+</head>
+<body class="fit">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="index.html">Alder Bank <span>Complaint workbench</span></a>
+  <nav aria-label="Main">
+    <ul class="app-nav">
+      
+      <li><a class="nav-link" href="index.html">Overview</a></li>
+      
+      <li><a class="nav-link" href="queue.html">Queue</a></li>
+      
+      <li><a class="nav-link" href="cases-AB-2026-00768.html" title="Last case opened: AB-2026-00768">Case</a></li>
+      
+      <li><a class="nav-link" href="departments.html">Departments</a></li>
+      
+      <li><a class="nav-link" href="team.html" aria-current="page">Team</a></li>
+      
+      <li><a class="nav-link" href="pipeline.html">Pipeline</a></li>
+      
+      <li><a class="nav-link minor" href="policies.html">Policy library</a></li>
+      
+      <li><a class="nav-link minor" href="audit.html">Audit log</a></li>
+      
+      <li><a class="nav-link minor" href="settings.html">Settings</a></li>
+      
+    </ul>
+  </nav>
+  <div class="role-form">
+    <span class="role-label" id="role-label">View as</span>
+    <div class="role-switch" role="group" aria-labelledby="role-label">
+      <a href="../handler/team.html" class="role-btn" aria-pressed="true">Handler</a><a href="../specialist/team.html" class="role-btn" aria-pressed="false">Specialist</a><a href="../team-lead/team.html" class="role-btn" aria-pressed="false">Team lead</a>
+    </div>
+    <span class="sr-only">Demo role switch, not a login.</span>
+  </div>
+  <button type="button" class="help-button" data-open="help" aria-expanded="false" aria-controls="help">Help</button>
+</header>
+<main id="main" class="page" tabindex="-1">
+  <div class="page-head">
+    <h1 class="view-title">Team</h1>
+    <form class="alerts-form" method="post" action="/prefs/alerts">
+
+<ul class="strip" aria-label="Deadlines">
+  <li><a href="queue--owner-all-due-past.html" class="bad">Past deadline <b>77</b></a></li>
+  <li><a href="queue--owner-all-due-soon.html">Due in 5 business days <b>147</b></a></li>
+  <li><a href="queue--owner-all-urgent-1.html">Urgent <b>360</b></a></li>
+  <li><a href="queue--owner-all-department-General-service-type-Website-or-app.html">Rises <b>1</b></a></li>
+  <li><button disabled title="Read-only preview" type="submit" name="show" value="0" class="strip-toggle" title="Hide the deadline pills on every page">Hide</button></li>
+</ul>
+
+</form>
+  </div>
+  
+
+<div id="help" class="popover" role="dialog" aria-labelledby="help-title" hidden>
+  <h2 id="help-title">How this page works</h2>
+  <p>Share out work fairly across the team.</p>
+  <ol><li>Read each person&#39;s open cases against the team average.</li><li>Assign unassigned cases to someone with room.</li></ol>
+  <p class="small muted">A table, not a league. It is for sharing out work, not ranking people.</p>
+  <button type="button" data-close="help">Close</button>
+</div>
+
+  
+<div class="board team">
+  <section class="panel s12 kpi-panel" aria-label="Team figures">
+    <ul class="kpis five">
+      <li class="kpi"><span class="kpi-label">Open</span><span class="kpi-value"><a href="queue--owner-all.html">1,284</a></span></li>
+      <li class="kpi"><span class="kpi-label">Unassigned</span><span class="kpi-value"><a href="queue--owner-unassigned.html">51</a></span></li>
+      <li class="kpi"><span class="kpi-label">Past deadline</span><span class="kpi-value bad"><a href="queue--owner-all-due-past.html">77</a></span></li>
+      <li class="kpi"><span class="kpi-label">Due in 5 business days</span><span class="kpi-value"><a href="queue--owner-all-due-soon.html">147</a></span></li>
+      <li class="kpi"><span class="kpi-label">Closed, last 30 days</span><span class="kpi-value">59</span></li>
+    </ul>
+  </section>
+
+  <section class="panel s8" aria-labelledby="load-h">
+    <div class="panel-head"><h2 id="load-h">Workload</h2><span class="aside">Shares out work. It does not rank people.</span></div>
+    <div class="panel-body scroll">
+      <table class="case-table compact workload">
+        <thead><tr><th scope="col">Name</th><th scope="col">Open</th><th scope="col" class="num-col">Past deadline</th><th scope="col" class="num-col">Due soon</th>
+          <th scope="col" class="num-col">Closed, last 30 days</th><th scope="col" class="num-col">Returned by specialists</th></tr></thead>
+        <tbody>
+        
+        <tr><th scope="row">Priya Nair<span class="who">Handler</span></th>
+          <td><span class="open-cell"><b>132</b><svg class="wl-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="4"/><rect class="tk-fill" width="47.7%" height="100%" rx="4"/><line class="wl-tick" x1="49.0%" x2="49.0%" y1="0" y2="100%"/></svg></span>
+            <span class="sr-only">Handler average 136</span></td>
+          <td class="num-col deadline-past">4</td><td class="num-col">15</td><td class="num-col">0</td>
+          <td class="num-col">37 of 125, 30%</td></tr>
+        
+        <tr class="avg-row"><th scope="row">Team average<span class="who">Handlers</span></th>
+          <td><span class="open-cell"><b>136</b><svg class="wl-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="4"/><rect class="tk-fill" width="49.0%" height="100%" rx="4"/><line class="wl-tick" x1="49.0%" x2="49.0%" y1="0" y2="100%"/></svg></span>
+            <span class="sr-only">Handler average 136</span></td>
+          <td class="num-col deadline-past">5</td><td class="num-col">14</td><td class="num-col">0</td>
+          <td class="num-col">33%</td></tr>
+        
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel s4" aria-labelledby="un-h">
+    <div class="panel-head"><h2 id="un-h">Unassigned</h2><a class="aside" href="queue--owner-unassigned.html">51 cases</a></div>
+    <div class="panel-body scroll">
+      <ol class="att unassigned">
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-01052</a>
+  <span class="what">Payment scam · Fraud claims</span>
+  <span class="tags"><span class="due soon" title="Business days">4 days left</span>
+    <form method="post" action="/cases/AB-2026-01052/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-01052</span></button></form></span></li>
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-01077</a>
+  <span class="what">Payment scam · Fraud claims</span>
+  <span class="tags"><span class="due soon" title="Business days">4 days left</span>
+    <form method="post" action="/cases/AB-2026-01077/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-01077</span></button></form></span></li>
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-01097</a>
+  <span class="what">Account administration · General service</span>
+  <span class="tags"><span class="due soon" title="Business days">5 days left</span>
+    <form method="post" action="/cases/AB-2026-01097/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-01097</span></button></form></span></li>
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-01133</a>
+  <span class="what">Payment scam · Fraud claims</span>
+  <span class="tags"><span class="due soon" title="Business days">5 days left</span>
+    <form method="post" action="/cases/AB-2026-01133/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-01133</span></button></form></span></li>
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-01137</a>
+  <span class="what">Payment scam · Fraud claims</span>
+  <span class="tags"><span class="due" title="Business days">6 days left</span>
+    <form method="post" action="/cases/AB-2026-01137/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-01137</span></button></form></span></li>
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-01156</a>
+  <span class="what">Payment scam · Fraud claims</span>
+  <span class="tags"><span class="due" title="Business days">6 days left</span>
+    <form method="post" action="/cases/AB-2026-01156/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-01156</span></button></form></span></li>
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-01180</a>
+  <span class="what">Fraud or security · Fraud claims</span>
+  <span class="tags"><span class="due" title="Business days">7 days left</span>
+    <form method="post" action="/cases/AB-2026-01180/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-01180</span></button></form></span></li>
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-01268</a>
+  <span class="what">Payment scam · Fraud claims</span>
+  <span class="tags"><span class="due" title="Business days">9 days left</span>
+    <form method="post" action="/cases/AB-2026-01268/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-01268</span></button></form></span></li>
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-01284</a>
+  <span class="what">Payment scam · Fraud claims</span>
+  <span class="tags"><span class="due" title="Business days">9 days left</span>
+    <form method="post" action="/cases/AB-2026-01284/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-01284</span></button></form></span></li>
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-01348</a>
+  <span class="what">Fraud or security · Fraud claims</span>
+  <span class="tags"><span class="due" title="Business days">10 days left</span>
+    <form method="post" action="/cases/AB-2026-01348/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-01348</span></button></form></span></li>
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-01365</a>
+  <span class="what">Payment scam · Fraud claims</span>
+  <span class="tags"><span class="due" title="Business days">11 days left</span>
+    <form method="post" action="/cases/AB-2026-01365/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-01365</span></button></form></span></li>
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-01564</a>
+  <span class="what">Service · Needs routing</span>
+  <span class="tags"><span class="due" title="Business days">15 days left</span>
+    <form method="post" action="/cases/AB-2026-01564/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-01564</span></button></form></span></li>
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-01585</a>
+  <span class="what">Fraud or security · General service</span>
+  <span class="tags"><span class="due" title="Business days">15 days left</span>
+    <form method="post" action="/cases/AB-2026-01585/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-01585</span></button></form></span></li>
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-01599</a>
+  <span class="what">Payment scam · Fraud claims</span>
+  <span class="tags"><span class="due" title="Business days">15 days left</span>
+    <form method="post" action="/cases/AB-2026-01599/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-01599</span></button></form></span></li>
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-00917</a>
+  <span class="what">Other · General service</span>
+  <span class="tags"><span class="due" title="Business days">26 days left</span>
+    <form method="post" action="/cases/AB-2026-00917/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-00917</span></button></form></span></li>
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-00987</a>
+  <span class="what">Fees and charges · General service</span>
+  <span class="tags"><span class="due" title="Business days">27 days left</span>
+    <form method="post" action="/cases/AB-2026-00987/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-00987</span></button></form></span></li>
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-01069</a>
+  <span class="what">Fees and charges · General service</span>
+  <span class="tags"><span class="due" title="Business days">29 days left</span>
+    <form method="post" action="/cases/AB-2026-01069/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-01069</span></button></form></span></li>
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-01121</a>
+  <span class="what">Website or app · Needs routing</span>
+  <span class="tags"><span class="due" title="Business days">30 days left</span>
+    <form method="post" action="/cases/AB-2026-01121/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-01121</span></button></form></span></li>
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-01138</a>
+  <span class="what">Service · Bereavement</span>
+  <span class="tags"><span class="due" title="Business days">31 days left</span>
+    <form method="post" action="/cases/AB-2026-01138/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-01138</span></button></form></span></li>
+
+<li><a href="#" aria-disabled="true" class="plain-id">AB-2026-01139</a>
+  <span class="what">Service · Financial difficulty</span>
+  <span class="tags"><span class="due" title="Business days">31 days left</span>
+    <form method="post" action="/cases/AB-2026-01139/assign"><input type="hidden" name="version" value="0"><input type="hidden" name="next" value="/team"><button disabled title="Read-only preview" type="submit">Assign to me<span class="sr-only"> AB-2026-01139</span></button></form></span></li>
+
+
+<li class="more-row"><a class="load-more" href="queue--owner-unassigned.html">Load more (31 left)</a></li>
+</ol>
+      
+    </div>
+  </section>
+</div>
+
+</main>
+<footer class="footer">Read-only preview: buttons and forms are off here. Run the app for the full product. Not an Ankura product. All data synthetic.</footer>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="htmx-config" content='{"includeIndicatorStyles": false, "allowEval": false}'>
+<title>Departments · Alder Bank complaints</title>
+<link rel="stylesheet" href="../static/app.css">
+<link rel="stylesheet" href="../static/layout.css">
+<link rel="stylesheet" href="../static/work.css">
+<script src="../static/app.js" defer></script>
+<link rel="stylesheet" href="../static/static-site.css">
+</head>
+<body class="fit">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="index.html">Alder Bank <span>Complaint workbench</span></a>
+  <nav aria-label="Main">
+    <ul class="app-nav">
+      
+      <li><a class="nav-link" href="index.html">Overview</a></li>
+      
+      <li><a class="nav-link" href="queue.html">Queue</a></li>
+      
+      <li><a class="nav-link" href="cases-AB-2026-00455.html" title="Last case opened: AB-2026-00455">Case</a></li>
+      
+      <li><a class="nav-link" href="departments.html" aria-current="page">Departments</a></li>
+      
+      <li><a class="nav-link" href="team.html">Team</a></li>
+      
+      <li><a class="nav-link" href="pipeline.html">Pipeline</a></li>
+      
+      <li><a class="nav-link minor" href="policies.html">Policy library</a></li>
+      
+      <li><a class="nav-link minor" href="audit.html">Audit log</a></li>
+      
+      <li><a class="nav-link minor" href="settings.html">Settings</a></li>
+      
+    </ul>
+  </nav>
+  <div class="role-form">
+    <span class="role-label" id="role-label">View as</span>
+    <div class="role-switch" role="group" aria-labelledby="role-label">
+      <a href="../handler/departments--department-Data-20protection.html" class="role-btn" aria-pressed="false">Handler</a><a href="../specialist/departments--department-Data-20protection.html" class="role-btn" aria-pressed="true">Specialist</a><a href="../team-lead/departments--department-Data-20protection.html" class="role-btn" aria-pressed="false">Team lead</a>
+    </div>
+    <span class="sr-only">Demo role switch, not a login.</span>
+  </div>
+  <button type="button" class="help-button" data-open="help" aria-expanded="false" aria-controls="help">Help</button>
+</header>
+<main id="main" class="page" tabindex="-1">
+  <div class="page-head">
+    <h1 class="view-title">Departments <span class="h1-sub">Fraud claims</span></h1>
+    <form class="alerts-form" method="post" action="/prefs/alerts">
+
+<ul class="strip" aria-label="Deadlines">
+  <li><a href="queue--owner-all-due-past.html" class="bad">Past deadline <b>77</b></a></li>
+  <li><a href="queue--owner-all-due-soon.html">Due in 5 business days <b>147</b></a></li>
+  <li><a href="queue--owner-all-urgent-1.html">Urgent <b>360</b></a></li>
+  <li><a href="queue--owner-all-department-General-service-type-Website-or-app.html">Rises <b>1</b></a></li>
+  <li><button disabled title="Read-only preview" type="submit" name="show" value="0" class="strip-toggle" title="Hide the deadline pills on every page">Hide</button></li>
+</ul>
+
+</form>
+  </div>
+  
+
+<div id="help" class="popover" role="dialog" aria-labelledby="help-title" hidden>
+  <h2 id="help-title">How this page works</h2>
+  <p>See one team&#39;s workload and the handovers waiting for it.</p>
+  <ol><li>Choose a department.</li><li>Accept a handover, or return it with a reason.</li><li>Check which fields are most often missing.</li></ol>
+  <p class="small muted">One department at a time so the list stays short.</p>
+  <button type="button" data-close="help">Close</button>
+</div>
+
+  
+<div class="board departments own">
+  
+
+  <section class="panel s12 kpi-panel" aria-label="Figures for Fraud claims">
+    <ul class="kpis five">
+      
+      <li class="kpi"><span class="kpi-label">Open</span>
+        <span class="kpi-value"><a href="queue--owner-all-department-Fraud-claims.html">155</a></span></li>
+      
+      <li class="kpi"><span class="kpi-label">Past deadline</span>
+        <span class="kpi-value bad"><a href="queue--owner-all-department-Fraud-claims-due-past.html">35</a></span></li>
+      
+      <li class="kpi"><span class="kpi-label">Due in 5 business days</span>
+        <span class="kpi-value"><a href="queue--owner-all-department-Fraud-claims-due-soon.html">44</a></span></li>
+      
+      <li class="kpi"><span class="kpi-label"><abbr title="Share of handovers a specialist sent back at least once">Handovers returned</abbr></span>
+        <span class="kpi-value">22%</span></li>
+      
+      <li class="kpi"><span class="kpi-label">Most missing field</span>
+        <span class="kpi-value word">Amount disputed</span></li>
+      
+    </ul>
+  </section>
+
+  <section class="panel s7" aria-labelledby="wait-h">
+    <div class="panel-head"><h2 id="wait-h">Waiting handovers</h2><a class="aside" href="queue--owner-all-state-handed-over-department-Fraud-claims.html">30 waiting</a></div>
+    <div class="panel-body scroll">
+      
+      <table class="case-table compact waiting">
+        <thead><tr><th scope="col">Case</th><th scope="col">Type</th><th scope="col">Channel</th><th scope="col">Deadline</th><th scope="col">Fields</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+        <tbody>
+
+<tr><th scope="row"><a href="cases-AB-2026-00044.html" class="plain-id">AB-2026-00044</a></th>
+  <td>Fraud or security</td><td>Mobile app</td><td><span class="due late" title="Business days">39 days late</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00044/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00044</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00044</span></summary>
+      <form method="post" action="/cases/AB-2026-00044/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00049.html" class="plain-id">AB-2026-00049</a></th>
+  <td>Payment scam</td><td>Mobile app</td><td><span class="due late" title="Business days">37 days late</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00049/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00049</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00049</span></summary>
+      <form method="post" action="/cases/AB-2026-00049/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00164.html" class="plain-id">AB-2026-00164</a></th>
+  <td>Payment scam</td><td>Secure message</td><td><span class="due late" title="Business days">28 days late</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00164/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00164</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00164</span></summary>
+      <form method="post" action="/cases/AB-2026-00164/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00195.html" class="plain-id">AB-2026-00195</a></th>
+  <td>Payment scam</td><td>Mobile app</td><td><span class="due late" title="Business days">26 days late</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00195/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00195</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00195</span></summary>
+      <form method="post" action="/cases/AB-2026-00195/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00222.html" class="plain-id">AB-2026-00222</a></th>
+  <td>Payment scam</td><td>Mobile app</td><td><span class="due late" title="Business days">24 days late</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00222/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00222</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00222</span></summary>
+      <form method="post" action="/cases/AB-2026-00222/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00245.html" class="plain-id">AB-2026-00245</a></th>
+  <td>Fraud or security</td><td>Letter</td><td><span class="due late" title="Business days">23 days late</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00245/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00245</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00245</span></summary>
+      <form method="post" action="/cases/AB-2026-00245/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00247.html" class="plain-id">AB-2026-00247</a></th>
+  <td>Fraud or security</td><td>Email</td><td><span class="due late" title="Business days">23 days late</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00247/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00247</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00247</span></summary>
+      <form method="post" action="/cases/AB-2026-00247/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00401.html" class="plain-id">AB-2026-00401</a></th>
+  <td>Payment scam</td><td>Phone</td><td><span class="due late" title="Business days">18 days late</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00401/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00401</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00401</span></summary>
+      <form method="post" action="/cases/AB-2026-00401/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00437.html" class="plain-id">AB-2026-00437</a></th>
+  <td>Fraud or security</td><td>Phone</td><td><span class="due late" title="Business days">16 days late</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00437/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00437</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00437</span></summary>
+      <form method="post" action="/cases/AB-2026-00437/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00455.html" class="plain-id">AB-2026-00455</a></th>
+  <td>Fraud or security</td><td>Email</td><td><span class="due late" title="Business days">16 days late</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00455/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00455</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00455</span></summary>
+      <form method="post" action="/cases/AB-2026-00455/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00522.html" class="plain-id">AB-2026-00522</a></th>
+  <td>Fraud or security</td><td>Branch</td><td><span class="due late" title="Business days">14 days late</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00522/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00522</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00522</span></summary>
+      <form method="post" action="/cases/AB-2026-00522/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00547.html" class="plain-id">AB-2026-00547</a></th>
+  <td>Fraud or security</td><td>Letter</td><td><span class="due late" title="Business days">13 days late</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00547/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00547</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00547</span></summary>
+      <form method="post" action="/cases/AB-2026-00547/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00548.html" class="plain-id">AB-2026-00548</a></th>
+  <td>Fraud or security</td><td>Phone</td><td><span class="due late" title="Business days">13 days late</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00548/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00548</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00548</span></summary>
+      <form method="post" action="/cases/AB-2026-00548/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00589.html" class="plain-id">AB-2026-00589</a></th>
+  <td>Fraud or security</td><td>Phone</td><td><span class="due late" title="Business days">11 days late</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00589/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00589</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00589</span></summary>
+      <form method="post" action="/cases/AB-2026-00589/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00634.html" class="plain-id">AB-2026-00634</a></th>
+  <td>Fraud or security</td><td>Letter</td><td><span class="due late" title="Business days">10 days late</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00634/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00634</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00634</span></summary>
+      <form method="post" action="/cases/AB-2026-00634/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00653.html" class="plain-id">AB-2026-00653</a></th>
+  <td>Fraud or security</td><td>Mobile app</td><td><span class="due late" title="Business days">9 days late</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00653/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00653</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00653</span></summary>
+      <form method="post" action="/cases/AB-2026-00653/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00678.html" class="plain-id">AB-2026-00678</a></th>
+  <td>Payment scam</td><td>Letter</td><td><span class="due late" title="Business days">7 days late</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00678/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00678</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00678</span></summary>
+      <form method="post" action="/cases/AB-2026-00678/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00712.html" class="plain-id">AB-2026-00712</a></th>
+  <td>Other</td><td>Letter</td><td><span class="due late" title="Business days">6 days late</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00712/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00712</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00712</span></summary>
+      <form method="post" action="/cases/AB-2026-00712/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00752.html" class="plain-id">AB-2026-00752</a></th>
+  <td>Payment scam</td><td>Email</td><td><span class="due late" title="Business days">5 days late</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00752/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00752</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00752</span></summary>
+      <form method="post" action="/cases/AB-2026-00752/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00876.html" class="plain-id">AB-2026-00876</a></th>
+  <td>Payment scam</td><td>Mobile app</td><td><span class="due today" title="Business days">Due today</span></td>
+  <td><span class="tag warm" title="Missing: Amount disputed, Date of transaction, Merchant name, Card last four, Police reference">5 fields missing</span></td>
+  <td><div class="acts">
+    <form method="post" action="/cases/AB-2026-00876/accept"><input type="hidden" name="version" value="0"><button disabled title="Read-only preview" type="submit" class="primary">Accept<span class="sr-only"> AB-2026-00876</span></button></form>
+    <details class="inline"><summary>Return<span class="sr-only"> AB-2026-00876</span></summary>
+      <form method="post" action="/cases/AB-2026-00876/return"><input type="hidden" name="version" value="0">
+        <label>Reason <input disabled name="reason" maxlength="500" required></label> <button disabled title="Read-only preview" type="submit">Return to the handler</button></form></details>
+  </div></td></tr>
+
+
+<tr class="more-tr"><td colspan="6"><a class="load-more" href="queue--owner-all-state-handed-over-department-Fraud-claims.html">Load more (10 left)</a></td></tr>
+</tbody>
+      </table>
+      
+    </div>
+  </section>
+
+  <section class="panel tabs s5" aria-labelledby="mix-h">
+    <input type="radio" name="mix" id="mix-1" class="sr-only" checked><input type="radio" name="mix" id="mix-2" class="sr-only"><input type="radio" name="mix" id="mix-3" class="sr-only">
+    <div class="panel-head"><h2 id="mix-h">Open cases</h2>
+      <div class="tab-labels"><label for="mix-1">Channel</label><label for="mix-2">Type</label><label for="mix-3">Missing fields</label></div></div>
+    <div class="panel-body pane p1"><ul class="track"><li><a class="tk-label" href="departments--department-Fraud-claims-source-phone.html">Phone</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">42</b></li><li><a class="tk-label" href="departments--department-Fraud-claims-source-email.html">Email</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="80.95%" height="100%" rx="5"/></svg><b class="tk-val">34</b></li><li><a class="tk-label" href="departments--department-Fraud-claims-source-mobile-app.html">Mobile app</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="59.52%" height="100%" rx="5"/></svg><b class="tk-val">25</b></li><li><a class="tk-label" href="departments--department-Fraud-claims-source-secure-message.html">Secure message</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="50%" height="100%" rx="5"/></svg><b class="tk-val">21</b></li><li><a class="tk-label" href="departments--department-Fraud-claims-source-branch.html">Branch</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="42.86%" height="100%" rx="5"/></svg><b class="tk-val">18</b></li><li><a class="tk-label" href="departments--department-Fraud-claims-source-letter.html">Letter</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="35.71%" height="100%" rx="5"/></svg><b class="tk-val">15</b></li></ul></div>
+    <div class="panel-body pane p2"><ul class="track"><li><a class="tk-label" href="departments--department-Fraud-claims-type-Fraud-or-security.html">Fraud or security</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">84</b></li><li><a class="tk-label" href="departments--department-Fraud-claims-type-Payment-scam.html">Payment scam</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="80.95%" height="100%" rx="5"/></svg><b class="tk-val">68</b></li><li><a class="tk-label" href="departments--department-Fraud-claims-type-Other.html">Other</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="2.38%" height="100%" rx="5"/></svg><b class="tk-val">2</b></li><li><a class="tk-label" href="departments--department-Fraud-claims-type-Account-administration.html">Account administration</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="1.19%" height="100%" rx="5"/></svg><b class="tk-val">1</b></li></ul></div>
+    <div class="panel-body pane p3"><ul class="track"><li><span class="tk-label">Amount disputed</span><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">155</b></li><li><span class="tk-label">Card last four</span><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">155</b></li><li><span class="tk-label">Date of transaction</span><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">155</b></li><li><span class="tk-label">Merchant name</span><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">155</b></li><li><span class="tk-label">Police reference</span><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">155</b></li></ul></div>
+  </section>
+</div>
+
+</main>
+<footer class="footer">Read-only preview: buttons and forms are off here. Run the app for the full product. Not an Ankura product. All data synthetic.</footer>
+</body>
+</html>

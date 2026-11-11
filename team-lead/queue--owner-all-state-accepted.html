@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="htmx-config" content='{"includeIndicatorStyles": false, "allowEval": false}'>
+<title>Queue · Alder Bank complaints</title>
+<link rel="stylesheet" href="../static/app.css">
+<link rel="stylesheet" href="../static/layout.css">
+<link rel="stylesheet" href="../static/queue.css">
+<script src="../static/app.js" defer></script>
+<link rel="stylesheet" href="../static/static-site.css">
+</head>
+<body class="fit">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="index.html">Alder Bank <span>Complaint workbench</span></a>
+  <nav aria-label="Main">
+    <ul class="app-nav">
+      
+      <li><a class="nav-link" href="index.html">Overview</a></li>
+      
+      <li><a class="nav-link" href="queue.html" aria-current="page">Queue</a></li>
+      
+      <li><a class="nav-link" href="cases-AB-2026-00768.html" title="Last case opened: AB-2026-00768">Case</a></li>
+      
+      <li><a class="nav-link" href="departments.html">Departments</a></li>
+      
+      <li><a class="nav-link" href="team.html">Team</a></li>
+      
+      <li><a class="nav-link" href="pipeline.html">Pipeline</a></li>
+      
+      <li><a class="nav-link minor" href="policies.html">Policy library</a></li>
+      
+      <li><a class="nav-link minor" href="audit.html">Audit log</a></li>
+      
+      <li><a class="nav-link minor" href="settings.html">Settings</a></li>
+      
+    </ul>
+  </nav>
+  <div class="role-form">
+    <span class="role-label" id="role-label">View as</span>
+    <div class="role-switch" role="group" aria-labelledby="role-label">
+      <a href="../handler/queue--owner-all-state-accepted.html" class="role-btn" aria-pressed="false">Handler</a><a href="../specialist/queue--owner-all-state-accepted.html" class="role-btn" aria-pressed="false">Specialist</a><a href="../team-lead/queue--owner-all-state-accepted.html" class="role-btn" aria-pressed="true">Team lead</a>
+    </div>
+    <span class="sr-only">Demo role switch, not a login.</span>
+  </div>
+  <button type="button" class="help-button" data-open="help" aria-expanded="false" aria-controls="help">Help</button>
+</header>
+<main id="main" class="page" tabindex="-1">
+  <div class="page-head">
+    <h1 class="view-title">Queue</h1>
+    <form class="alerts-form" method="post" action="/prefs/alerts">
+
+<ul class="strip" aria-label="Deadlines">
+  <li><a href="queue--owner-all-due-past.html" class="bad">Past deadline <b>77</b></a></li>
+  <li><a href="queue--owner-all-due-soon.html">Due in 5 business days <b>147</b></a></li>
+  <li><a href="queue--owner-all-urgent-1.html">Urgent <b>360</b></a></li>
+  <li><a href="queue--owner-all-department-General-service-type-Website-or-app.html">Rises <b>1</b></a></li>
+  <li><button disabled title="Read-only preview" type="submit" name="show" value="0" class="strip-toggle" title="Hide the deadline pills on every page">Hide</button></li>
+</ul>
+
+</form>
+  </div>
+  
+
+<div id="help" class="popover" role="dialog" aria-labelledby="help-title" hidden>
+  <h2 id="help-title">How this page works</h2>
+  <p>Pick the next case to work on. The case closest to its deadline comes first.</p>
+  <ol><li>Read down the list. Cases past their deadline are at the top.</li><li>Use Filters to narrow the list, or the tabs to see unassigned cases.</li><li>Select Assign to me on a case with no owner.</li><li>Select a case number to open the case.</li></ol>
+  <p class="small muted">One table sorted by deadline, so the most urgent work is always the first row.</p>
+  <button type="button" data-close="help">Close</button>
+</div>
+
+  
+
+<div class="board queue">
+  <section class="panel s8" aria-labelledby="cases-h">
+    <div class="panel-head"><h2 id="cases-h">Cases</h2>
+      <nav class="segmented" id="owners" aria-label="Whose cases">
+        <a href="queue.html">Mine</a><a href="queue.html">Unassigned</a><a href="queue--owner-all-state-accepted.html" aria-current="page">All</a>
+      </nav>
+    </div>
+    
+    <form class="q-filters" method="get" action="/queue"
+         >
+      <input type="hidden" name="owner" value="all">
+      <label><span class="sr-only">Department</span><select disabled name="department"><option value="">All departments</option><option>Fraud claims</option><option>Financial difficulty</option><option>Bereavement</option><option>Data protection</option><option>Mis-selling review</option><option>General service</option></select></label>
+      <label><span class="sr-only">Type</span><select disabled name="type"><option value="">All types</option><option>Website or app</option><option>Service</option><option>Fees and charges</option><option>Fraud or security</option><option>Payment scam</option><option>Investment advice</option><option>Account administration</option><option>Other</option></select></label>
+      <label><span class="sr-only">Stage</span><select disabled name="state"><option value="">Open stages</option><option value="new">New</option><option value="in_review">In review</option><option value="handed_over">Handed over</option><option value="returned">Returned</option><option value="accepted" selected>Accepted</option></select></label>
+      <label><span class="sr-only">Deadline</span><select disabled name="due"><option value="">Any deadline</option><option value="past">Past deadline</option><option value="soon">Due soon</option></select></label>
+      <label class="check"><input disabled type="checkbox" name="urgent" value="1"> Urgent only</label>
+      <button disabled title="Read-only preview" type="submit">Apply</button>
+    </form>
+    <div class="panel-body" id="case-list">
+      
+      <p class="q-count"><span id="shown">Showing 50 of 316</span>
+        <a href="queue--owner-all.html">Clear filters</a></p>
+      <div class="scroll q-scroll">
+        <table class="case-table compact q-table">
+          <thead><tr><th scope="col">Case</th><th scope="col">Deadline</th><th scope="col">Type</th><th scope="col">Department</th><th scope="col">Stage</th><th scope="col">Flags</th><th scope="col">Owner</th></tr></thead>
+          <tbody>
+
+
+<tr class="case-row" data-case="AB-2026-00001" data-days="-43">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00001" checked></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00001</a></td>
+  <td><span class="due late" title="Business days">43 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00010" data-days="-42">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00010"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00010</a></td>
+  <td><span class="due late" title="Business days">42 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00022" data-days="-41">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00022"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00022</a></td>
+  <td><span class="due late" title="Business days">41 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00034" data-days="-39">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00034"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00034</a></td>
+  <td><span class="due late" title="Business days">39 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Elena Petrova</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00064" data-days="-36">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00064"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00064</a></td>
+  <td><span class="due late" title="Business days">36 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00082" data-days="-35">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00082"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00082</a></td>
+  <td><span class="due late" title="Business days">35 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00083" data-days="-35">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00083"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00083</a></td>
+  <td><span class="due late" title="Business days">35 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Elena Petrova</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00090" data-days="-34">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00090"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00090</a></td>
+  <td><span class="due late" title="Business days">34 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00091" data-days="-34">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00091"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00091</a></td>
+  <td><span class="due late" title="Business days">34 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Account administration</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00098" data-days="-33">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00098"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00098</a></td>
+  <td><span class="due late" title="Business days">33 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00107" data-days="-33">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00107"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00107</a></td>
+  <td><span class="due late" title="Business days">33 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00120" data-days="-31">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00120"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00120</a></td>
+  <td><span class="due late" title="Business days">31 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td><span class="urgent-tag">Urgent</span> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Marek Kowalski</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00119" data-days="-31">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00119"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00119</a></td>
+  <td><span class="due late" title="Business days">31 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00121" data-days="-31">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00121"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00121</a></td>
+  <td><span class="due late" title="Business days">31 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00126" data-days="-31">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00126"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00126</a></td>
+  <td><span class="due late" title="Business days">31 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00163" data-days="-28">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00163"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00163</a></td>
+  <td><span class="due late" title="Business days">28 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00169" data-days="-28">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00169"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00169</a></td>
+  <td><span class="due late" title="Business days">28 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00170" data-days="-28">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00170"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00170</a></td>
+  <td><span class="due late" title="Business days">28 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Other</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00171" data-days="-27">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00171"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00171</a></td>
+  <td><span class="due late" title="Business days">27 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Financial difficulty</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Elena Petrova</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00184" data-days="-26">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00184"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00184</a></td>
+  <td><span class="due late" title="Business days">26 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Account administration</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00183" data-days="-26">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00183"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00183</a></td>
+  <td><span class="due late" title="Business days">26 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00196" data-days="-26">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00196"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00196</a></td>
+  <td><span class="due late" title="Business days">26 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00197" data-days="-25">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00197"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00197</a></td>
+  <td><span class="due late" title="Business days">25 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00207" data-days="-25">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00207"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00207</a></td>
+  <td><span class="due late" title="Business days">25 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00219" data-days="-24">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00219"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00219</a></td>
+  <td><span class="due late" title="Business days">24 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00226" data-days="-24">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00226"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00226</a></td>
+  <td><span class="due late" title="Business days">24 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00233" data-days="-23">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00233"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00233</a></td>
+  <td><span class="due late" title="Business days">23 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fees and charges</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00236" data-days="-23">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00236"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00236</a></td>
+  <td><span class="due late" title="Business days">23 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00238" data-days="-23">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00238"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00238</a></td>
+  <td><span class="due late" title="Business days">23 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00239" data-days="-23">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00239"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00239</a></td>
+  <td><span class="due late" title="Business days">23 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Account administration</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00248" data-days="-23">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00248"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00248</a></td>
+  <td><span class="due late" title="Business days">23 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00263" data-days="-22">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00263"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00263</a></td>
+  <td><span class="due late" title="Business days">22 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00259" data-days="-22">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00259"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00259</a></td>
+  <td><span class="due late" title="Business days">22 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00264" data-days="-22">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00264"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00264</a></td>
+  <td><span class="due late" title="Business days">22 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00267" data-days="-22">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00267"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00267</a></td>
+  <td><span class="due late" title="Business days">22 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00272" data-days="-22">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00272"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00272</a></td>
+  <td><span class="due late" title="Business days">22 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00279" data-days="-22">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00279"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00279</a></td>
+  <td><span class="due late" title="Business days">22 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00298" data-days="-21">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00298"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00298</a></td>
+  <td><span class="due late" title="Business days">21 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00299" data-days="-21">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00299"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00299</a></td>
+  <td><span class="due late" title="Business days">21 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Other</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00304" data-days="-21">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00304"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00304</a></td>
+  <td><span class="due late" title="Business days">21 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00356" data-days="-20">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00356"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00356</a></td>
+  <td><span class="due late" title="Business days">20 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00315" data-days="-20">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00315"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00315</a></td>
+  <td><span class="due late" title="Business days">20 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00316" data-days="-20">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00316"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00316</a></td>
+  <td><span class="due late" title="Business days">20 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00326" data-days="-20">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00326"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00326</a></td>
+  <td><span class="due late" title="Business days">20 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00329" data-days="-20">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00329"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00329</a></td>
+  <td><span class="due late" title="Business days">20 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00350" data-days="-20">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00350"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00350</a></td>
+  <td><span class="due late" title="Business days">20 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Payment scam</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00354" data-days="-20">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00354"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00354</a></td>
+  <td><span class="due late" title="Business days">20 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Fraud or security</td>
+  <td class="q-wrap">Fraud claims</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00004" data-days="-19">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00004"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00004</a></td>
+  <td><span class="due late" title="Business days">19 days late</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Grace Chen</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00007" data-days="-19">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00007"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00007</a></td>
+  <td><span class="due late" title="Business days">19 days late</span></td>
+  <td class="q-wrap">Website or app</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Sofia Marino</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00002" data-days="-19">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00002"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00002</a></td>
+  <td><span class="due late" title="Business days">19 days late</span></td>
+  <td class="q-wrap">Fees and charges</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-accepted">Accepted</span></td>
+  <td></td>
+  <td>Callum Reid</td>
+</tr>
+
+
+<tr class="q-more"><td colspan="7"><nav class="pager" aria-label="Pages"><a class="load-more" href="queue.html">Load more</a></nav></td></tr>
+
+</tbody>
+        </table>
+      </div>
+      
+    </div>
+  </section>
+  
+
+<section class="panel s4 q-preview" id="preview" aria-labelledby="pv-h">
+  <div class="panel-head"><h2 id="pv-h">Preview</h2></div>
+  
+  <div class="panel-body scroll">
+    <p class="pv-top"><span class="pv-id">AB-2026-00001</span><span class="stage-chip st-accepted">Accepted</span></p>
+    <p class="pv-top"><span class="due late" title="Business days">43 days late</span><span class="muted">10 Sep 2026</span><span class="clock">15-day clock</span></p>
+    
+    <dl class="pv-facts">
+      <dt>Type</dt><dd>Payment scam <span class="muted">set by the model</span></dd>
+      <dt>Department</dt><dd>Fraud claims <span class="muted">set by the model</span></dd>
+      <dt>Received</dt><dd>19 Aug 2026, branch</dd>
+      <dt>AI summary</dt><dd>No draft yet</dd>
+      <dt>Handover</dt><dd>Missing Amount disputed, Date of transaction, Merchant name, Card last four, Police reference</dd>
+    </dl>
+    <figure class="pv-note"><figcaption>Last note, 24 Aug 2026</figcaption><p>Complaint acknowledged and a named contact given.</p></figure>
+  </div>
+  <div class="pv-actions">
+    <a class="pv-btn primary" href="#" aria-disabled="true">Open case</a>
+    
+    <a class="pv-btn" href="#" aria-disabled="true">Next case</a>
+  </div>
+  
+</section>
+
+</div>
+
+</main>
+<footer class="footer">Read-only preview: buttons and forms are off here. Run the app for the full product. Not an Ankura product. All data synthetic.</footer>
+</body>
+</html>

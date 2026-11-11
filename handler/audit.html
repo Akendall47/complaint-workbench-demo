@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="htmx-config" content='{"includeIndicatorStyles": false, "allowEval": false}'>
+<title>Audit log · Alder Bank complaints</title>
+<link rel="stylesheet" href="../static/app.css">
+<link rel="stylesheet" href="../static/layout.css">
+<link rel="stylesheet" href="../static/reference.css">
+<script src="../static/app.js" defer></script>
+<link rel="stylesheet" href="../static/static-site.css">
+</head>
+<body class="fit">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="index.html">Alder Bank <span>Complaint workbench</span></a>
+  <nav aria-label="Main">
+    <ul class="app-nav">
+      
+      <li><a class="nav-link" href="index.html">Overview</a></li>
+      
+      <li><a class="nav-link" href="queue.html">Queue</a></li>
+      
+      <li><a class="nav-link" href="cases-AB-2026-00768.html" title="Last case opened: AB-2026-00768">Case</a></li>
+      
+      <li><a class="nav-link" href="departments.html">Departments</a></li>
+      
+      <li><a class="nav-link" href="team.html">Team</a></li>
+      
+      <li><a class="nav-link" href="pipeline.html">Pipeline</a></li>
+      
+      <li><a class="nav-link minor" href="policies.html">Policy library</a></li>
+      
+      <li><a class="nav-link minor" href="audit.html" aria-current="page">Audit log</a></li>
+      
+      <li><a class="nav-link minor" href="settings.html">Settings</a></li>
+      
+    </ul>
+  </nav>
+  <div class="role-form">
+    <span class="role-label" id="role-label">View as</span>
+    <div class="role-switch" role="group" aria-labelledby="role-label">
+      <a href="../handler/audit.html" class="role-btn" aria-pressed="true">Handler</a><a href="../specialist/audit.html" class="role-btn" aria-pressed="false">Specialist</a><a href="../team-lead/audit.html" class="role-btn" aria-pressed="false">Team lead</a>
+    </div>
+    <span class="sr-only">Demo role switch, not a login.</span>
+  </div>
+  <button type="button" class="help-button" data-open="help" aria-expanded="false" aria-controls="help">Help</button>
+</header>
+<main id="main" class="page" tabindex="-1">
+  <div class="page-head">
+    <h1 class="view-title">Audit log</h1>
+    
+  </div>
+  
+
+<div id="help" class="popover" role="dialog" aria-labelledby="help-title" hidden>
+  <h2 id="help-title">How this page works</h2>
+  <p>See every action, who took it and when.</p>
+  <ol><li>Read the chain check at the top.</li><li>Filter by case or by person.</li></ol>
+  <p class="small muted">Newest first, because the latest action is usually the one you want.</p>
+  <button type="button" data-close="help">Close</button>
+</div>
+
+  
+
+<div class="board ref lone">
+  <section class="panel s6" aria-label="Audit log">
+    <p class="lone-text">The audit log is for the team lead.</p>
+    <form method="post" action="/role"><button disabled title="Read-only preview" type="submit" name="role" value="team_lead" class="primary">View as team lead</button></form>
+  </section>
+</div>
+
+
+</main>
+<footer class="footer">Read-only preview: buttons and forms are off here. Run the app for the full product. Not an Ankura product. All data synthetic.</footer>
+</body>
+</html>

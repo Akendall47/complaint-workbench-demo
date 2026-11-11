@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="htmx-config" content='{"includeIndicatorStyles": false, "allowEval": false}'>
+<title>Queue · Alder Bank complaints</title>
+<link rel="stylesheet" href="../static/app.css">
+<link rel="stylesheet" href="../static/layout.css">
+<link rel="stylesheet" href="../static/queue.css">
+<script src="../static/app.js" defer></script>
+<link rel="stylesheet" href="../static/static-site.css">
+</head>
+<body class="fit">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="index.html">Alder Bank <span>Complaint workbench</span></a>
+  <nav aria-label="Main">
+    <ul class="app-nav">
+      
+      <li><a class="nav-link" href="index.html">Overview</a></li>
+      
+      <li><a class="nav-link" href="queue.html" aria-current="page">Queue</a></li>
+      
+      <li><a class="nav-link" href="cases-AB-2026-01096.html" title="Last case opened: AB-2026-01096">Case</a></li>
+      
+      <li><a class="nav-link" href="departments.html">Departments</a></li>
+      
+      <li><a class="nav-link" href="team.html">Team</a></li>
+      
+      <li><a class="nav-link" href="pipeline.html">Pipeline</a></li>
+      
+      <li><a class="nav-link minor" href="policies.html">Policy library</a></li>
+      
+      <li><a class="nav-link minor" href="audit.html">Audit log</a></li>
+      
+      <li><a class="nav-link minor" href="settings.html">Settings</a></li>
+      
+    </ul>
+  </nav>
+  <div class="role-form">
+    <span class="role-label" id="role-label">View as</span>
+    <div class="role-switch" role="group" aria-labelledby="role-label">
+      <a href="../handler/queue--owner-all-type-Service.html" class="role-btn" aria-pressed="true">Handler</a><a href="../specialist/queue--owner-all-type-Service.html" class="role-btn" aria-pressed="false">Specialist</a><a href="../team-lead/queue--owner-all-type-Service.html" class="role-btn" aria-pressed="false">Team lead</a>
+    </div>
+    <span class="sr-only">Demo role switch, not a login.</span>
+  </div>
+  <button type="button" class="help-button" data-open="help" aria-expanded="false" aria-controls="help">Help</button>
+</header>
+<main id="main" class="page" tabindex="-1">
+  <div class="page-head">
+    <h1 class="view-title">Queue</h1>
+    <form class="alerts-form" method="post" action="/prefs/alerts">
+
+<ul class="strip" aria-label="Deadlines">
+  <li><a href="queue--owner-all-due-past.html" class="bad">Past deadline <b>77</b></a></li>
+  <li><a href="queue--owner-all-due-soon.html">Due in 5 business days <b>147</b></a></li>
+  <li><a href="queue--owner-all-urgent-1.html">Urgent <b>360</b></a></li>
+  <li><a href="queue--owner-all-department-General-service-type-Website-or-app.html">Rises <b>1</b></a></li>
+  <li><button disabled title="Read-only preview" type="submit" name="show" value="0" class="strip-toggle" title="Hide the deadline pills on every page">Hide</button></li>
+</ul>
+
+</form>
+  </div>
+  
+
+<div id="help" class="popover" role="dialog" aria-labelledby="help-title" hidden>
+  <h2 id="help-title">How this page works</h2>
+  <p>Pick the next case to work on. The case closest to its deadline comes first.</p>
+  <ol><li>Read down the list. Cases past their deadline are at the top.</li><li>Use Filters to narrow the list, or the tabs to see unassigned cases.</li><li>Select Assign to me on a case with no owner.</li><li>Select a case number to open the case.</li></ol>
+  <p class="small muted">One table sorted by deadline, so the most urgent work is always the first row.</p>
+  <button type="button" data-close="help">Close</button>
+</div>
+
+  
+
+<div class="board queue">
+  <section class="panel s8" aria-labelledby="cases-h">
+    <div class="panel-head"><h2 id="cases-h">Cases</h2>
+      <nav class="segmented" id="owners" aria-label="Whose cases">
+        <a href="queue.html">Mine</a><a href="queue.html">Unassigned</a><a href="queue--owner-all-type-Service.html" aria-current="page">All</a>
+      </nav>
+    </div>
+    
+    <form class="q-filters" method="get" action="/queue"
+         >
+      <input type="hidden" name="owner" value="all">
+      <label><span class="sr-only">Department</span><select disabled name="department"><option value="">All departments</option><option>Fraud claims</option><option>Financial difficulty</option><option>Bereavement</option><option>Data protection</option><option>Mis-selling review</option><option>General service</option></select></label>
+      <label><span class="sr-only">Type</span><select disabled name="type"><option value="">All types</option><option>Website or app</option><option selected>Service</option><option>Fees and charges</option><option>Fraud or security</option><option>Payment scam</option><option>Investment advice</option><option>Account administration</option><option>Other</option></select></label>
+      <label><span class="sr-only">Stage</span><select disabled name="state"><option value="">Open stages</option><option value="new">New</option><option value="in_review">In review</option><option value="handed_over">Handed over</option><option value="returned">Returned</option><option value="accepted">Accepted</option></select></label>
+      <label><span class="sr-only">Deadline</span><select disabled name="due"><option value="">Any deadline</option><option value="past">Past deadline</option><option value="soon">Due soon</option></select></label>
+      <label class="check"><input disabled type="checkbox" name="urgent" value="1"> Urgent only</label>
+      <button disabled title="Read-only preview" type="submit">Apply</button>
+    </form>
+    <div class="panel-body" id="case-list">
+      
+      <p class="q-count"><span id="shown">Showing 50 of 303</span>
+        <a href="queue--owner-all.html">Clear filters</a></p>
+      <div class="scroll q-scroll">
+        <table class="case-table compact q-table">
+          <thead><tr><th scope="col">Case</th><th scope="col">Deadline</th><th scope="col">Type</th><th scope="col">Department</th><th scope="col">Stage</th><th scope="col">Flags</th><th scope="col">Owner</th></tr></thead>
+          <tbody>
+
+
+<tr class="case-row" data-case="AB-2026-00134" data-days="-30">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00134" checked></label><a class="plain-id" href="cases-AB-2026-00134.html">AB-2026-00134</a></td>
+  <td><span class="due late" title="Business days">30 days late</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00005" data-days="-19">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00005"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00005</a></td>
+  <td><span class="due late" title="Business days">19 days late</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-returned">Returned</span></td>
+  <td><span class="urgent-tag">Urgent</span> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Amara Okafor</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00061" data-days="-11">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00061"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00061</a></td>
+  <td><span class="due late" title="Business days">11 days late</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Amara Okafor</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00068" data-days="-10">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00068"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00068</a></td>
+  <td><span class="due late" title="Business days">10 days late</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-returned">Returned</span></td>
+  <td><span class="urgent-tag">Urgent</span> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Marek Kowalski</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00117" data-days="-6">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00117"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00117</a></td>
+  <td><span class="due late" title="Business days">6 days late</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Marek Kowalski</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00166" data-days="-3">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00166"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00166</a></td>
+  <td><span class="due late" title="Business days">3 days late</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Liam Doyle</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00205" data-days="0">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00205"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00205</a></td>
+  <td><span class="due today" title="Business days">Due today</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-returned">Returned</span></td>
+  <td><span class="urgent-tag">Urgent</span> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Grace Chen</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00225" data-days="1">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00225"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00225</a></td>
+  <td><span class="due soon" title="Business days">1 day left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">Financial difficulty</td>
+  <td><span class="stage-chip st-returned">Returned</span></td>
+  <td><span class="urgent-tag">Urgent</span> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Marek Kowalski</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00227" data-days="1">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00227"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00227</a></td>
+  <td><span class="due soon" title="Business days">1 day left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-returned">Returned</span></td>
+  <td><span class="urgent-tag">Urgent</span> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Amara Okafor</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00929" data-days="1">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00929"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00929</a></td>
+  <td><span class="due soon" title="Business days">1 day left</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-in_review">In review</span></td>
+  <td><span class="urgent-tag">Urgent</span> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Amara Okafor</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00243" data-days="2">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00243"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00243</a></td>
+  <td><span class="due soon" title="Business days">2 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">Financial difficulty</td>
+  <td><span class="stage-chip st-returned">Returned</span></td>
+  <td><span class="urgent-tag">Urgent</span> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Sofia Marino</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00955" data-days="2">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00955"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00955</a></td>
+  <td><span class="due soon" title="Business days">2 days left</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-returned">Returned</span></td>
+  <td><span class="urgent-tag">Urgent</span> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Sofia Marino</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00977" data-days="2">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00977"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00977</a></td>
+  <td><span class="due soon" title="Business days">2 days left</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-in_review">In review</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Amara Okafor</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00261" data-days="3">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00261"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00261</a></td>
+  <td><span class="due soon" title="Business days">3 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Yusuf Rahman</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00268" data-days="3">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00268"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00268</a></td>
+  <td><span class="due soon" title="Business days">3 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">Financial difficulty</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Elena Petrova</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00270" data-days="3">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00270"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00270</a></td>
+  <td><span class="due soon" title="Business days">3 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-returned">Returned</span></td>
+  <td><span class="urgent-tag">Urgent</span> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Grace Chen</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00993" data-days="3">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00993"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00993</a></td>
+  <td><span class="due soon" title="Business days">3 days left</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Daniel Osei</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00277" data-days="3">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00277"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00277</a></td>
+  <td><span class="due soon" title="Business days">3 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Grace Chen</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00284" data-days="4">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00284"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00284</a></td>
+  <td><span class="due soon" title="Business days">4 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-returned">Returned</span></td>
+  <td><span class="urgent-tag">Urgent</span> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Amara Okafor</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00286" data-days="4">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00286"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00286</a></td>
+  <td><span class="due soon" title="Business days">4 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-returned">Returned</span></td>
+  <td><span class="urgent-tag">Urgent</span> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Tom Fletcher</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00287" data-days="4">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00287"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00287</a></td>
+  <td><span class="due soon" title="Business days">4 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Amara Okafor</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00288" data-days="4">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00288"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00288</a></td>
+  <td><span class="due soon" title="Business days">4 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Grace Chen</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00294" data-days="4">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00294"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00294</a></td>
+  <td><span class="due soon" title="Business days">4 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-returned">Returned</span></td>
+  <td><span class="urgent-tag">Urgent</span> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Marek Kowalski</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00297" data-days="4">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00297"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00297</a></td>
+  <td><span class="due soon" title="Business days">4 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">Financial difficulty</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Elena Petrova</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00300" data-days="4">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00300"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00300</a></td>
+  <td><span class="due soon" title="Business days">4 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">Financial difficulty</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Elena Petrova</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00302" data-days="4">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00302"></label><a class="plain-id" href="cases-AB-2026-00302.html">AB-2026-00302</a></td>
+  <td><span class="due soon" title="Business days">4 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Priya Nair</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00305" data-days="4">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00305"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00305</a></td>
+  <td><span class="due soon" title="Business days">4 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Amara Okafor</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00307" data-days="4">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00307"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00307</a></td>
+  <td><span class="due soon" title="Business days">4 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-returned">Returned</span></td>
+  <td><span class="urgent-tag">Urgent</span> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Tom Fletcher</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-01042" data-days="4">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-01042"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-01042</a></td>
+  <td><span class="due soon" title="Business days">4 days left</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-in_review">In review</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Amara Okafor</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-01059" data-days="4">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-01059"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-01059</a></td>
+  <td><span class="due soon" title="Business days">4 days left</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-in_review">In review</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Amara Okafor</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00311" data-days="5">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00311"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00311</a></td>
+  <td><span class="due soon" title="Business days">5 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-returned">Returned</span></td>
+  <td><span class="urgent-tag">Urgent</span> <span class="ret-tag" title="Sent back by a specialist 2 times">Returned 2×</span></td>
+  <td>Margaret Hughes</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00323" data-days="5">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00323"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00323</a></td>
+  <td><span class="due soon" title="Business days">5 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">Financial difficulty</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Elena Petrova</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00336" data-days="5">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00336"></label><a class="plain-id" href="cases-AB-2026-00336.html">AB-2026-00336</a></td>
+  <td><span class="due soon" title="Business days">5 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Priya Nair</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00339" data-days="5">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00339"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00339</a></td>
+  <td><span class="due soon" title="Business days">5 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Tom Fletcher</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00344" data-days="5">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00344"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00344</a></td>
+  <td><span class="due soon" title="Business days">5 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-returned">Returned</span></td>
+  <td><span class="urgent-tag">Urgent</span> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Amara Okafor</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00347" data-days="5">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00347"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00347</a></td>
+  <td><span class="due soon" title="Business days">5 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Grace Chen</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00348" data-days="5">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00348"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00348</a></td>
+  <td><span class="due soon" title="Business days">5 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Grace Chen</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-01134" data-days="5">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-01134"></label><a class="plain-id" href="cases-AB-2026-01134.html">AB-2026-01134</a></td>
+  <td><span class="due soon" title="Business days">5 days left</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-new">New</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Priya Nair</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00381" data-days="6">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00381"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00381</a></td>
+  <td><span class="due" title="Business days">6 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td></td>
+  <td>Grace Chen</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00388" data-days="7">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00388"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00388</a></td>
+  <td><span class="due" title="Business days">7 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-returned">Returned</span></td>
+  <td> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Liam Doyle</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00394" data-days="7">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00394"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00394</a></td>
+  <td><span class="due" title="Business days">7 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td></td>
+  <td>Amara Okafor</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00395" data-days="7">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00395"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00395</a></td>
+  <td><span class="due" title="Business days">7 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Yusuf Rahman</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00403" data-days="7">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00403"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00403</a></td>
+  <td><span class="due" title="Business days">7 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-returned">Returned</span></td>
+  <td> <span class="ret-tag" title="Sent back by a specialist 2 times">Returned 2×</span></td>
+  <td>Margaret Hughes</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00404" data-days="7">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00404"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00404</a></td>
+  <td><span class="due" title="Business days">7 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">Financial difficulty</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td></td>
+  <td>Elena Petrova</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00411" data-days="8">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00411"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00411</a></td>
+  <td><span class="due" title="Business days">8 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">Bereavement</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td><span class="urgent-tag">Urgent</span></td>
+  <td>Grace Chen</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00420" data-days="8">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00420"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00420</a></td>
+  <td><span class="due" title="Business days">8 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Sofia Marino</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-01247" data-days="8">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-01247"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-01247</a></td>
+  <td><span class="due" title="Business days">8 days left</span> <span class="clock" title="Payment services: 15 business days, 35 in exceptional cases">15-day clock</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap"><span class="routing">Needs routing</span></td>
+  <td><span class="stage-chip st-new">New</span></td>
+  <td></td>
+  <td>Yusuf Rahman</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00428" data-days="8">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00428"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00428</a></td>
+  <td><span class="due" title="Business days">8 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td></td>
+  <td>Amara Okafor</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00451" data-days="9">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00451"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00451</a></td>
+  <td><span class="due" title="Business days">9 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-returned">Returned</span></td>
+  <td><span class="urgent-tag">Urgent</span> <span class="ret-tag" title="Sent back by a specialist 1 time">Returned 1×</span></td>
+  <td>Grace Chen</td>
+</tr>
+
+<tr class="case-row" data-case="AB-2026-00443" data-days="9">
+  <td><label class="q-hit"><input type="radio" name="pick" class="q-pick sr-only" aria-label="Preview AB-2026-00443"></label><a class="plain-id" href="#" aria-disabled="true">AB-2026-00443</a></td>
+  <td><span class="due" title="Business days">9 days left</span></td>
+  <td class="q-wrap">Service</td>
+  <td class="q-wrap">General service</td>
+  <td><span class="stage-chip st-handed_over">Handed over</span></td>
+  <td></td>
+  <td>Sofia Marino</td>
+</tr>
+
+
+<tr class="q-more"><td colspan="7"><nav class="pager" aria-label="Pages"><a class="load-more" href="queue.html">Load more</a></nav></td></tr>
+
+</tbody>
+        </table>
+      </div>
+      
+    </div>
+  </section>
+  
+
+<section class="panel s4 q-preview" id="preview" aria-labelledby="pv-h">
+  <div class="panel-head"><h2 id="pv-h">Preview</h2></div>
+  
+  <div class="panel-body scroll">
+    <p class="pv-top"><span class="pv-id">AB-2026-00134</span><span class="stage-chip st-handed_over">Handed over</span><span class="urgent-tag">Urgent</span></p>
+    <p class="pv-top"><span class="due late" title="Business days">30 days late</span><span class="muted">29 Sep 2026</span><span class="clock">15-day clock</span></p>
+    
+    <dl class="pv-facts">
+      <dt>Type</dt><dd>Service <span class="muted">set by the model</span></dd>
+      <dt>Department</dt><dd><span class="routing">Needs routing</span></dd>
+      <dt>Received</dt><dd>8 Sep 2026, letter</dd>
+      <dt>AI summary</dt><dd>No draft yet</dd>
+      
+    </dl>
+    <figure class="pv-note"><figcaption>Last note, 10 Sep 2026</figcaption><p>Noted: Reported to the police, reference PR-415349. Listened to the call recording and noted the wait time. For the record: The payment went to Brightwell Electronics. Case picked up from the queue. Confirmed with the customer: Last four digits of the card: 8455. Spoke to [NAME] on [PHONE] and checked account [ACCOUNT], sort code [SORT CODE]. Recovery steps explained to the customer. Complaint log</p></figure>
+  </div>
+  <div class="pv-actions">
+    <a class="pv-btn primary" href="cases-AB-2026-00134.html">Open case</a>
+    
+    <a class="pv-btn" href="#" aria-disabled="true">Next case</a>
+  </div>
+  
+</section>
+
+</div>
+
+</main>
+<footer class="footer">Read-only preview: buttons and forms are off here. Run the app for the full product. Not an Ankura product. All data synthetic.</footer>
+</body>
+</html>

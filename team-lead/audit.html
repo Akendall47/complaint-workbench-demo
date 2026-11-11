@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="htmx-config" content='{"includeIndicatorStyles": false, "allowEval": false}'>
+<title>Audit log · Alder Bank complaints</title>
+<link rel="stylesheet" href="../static/app.css">
+<link rel="stylesheet" href="../static/layout.css">
+<link rel="stylesheet" href="../static/reference.css">
+<script src="../static/app.js" defer></script>
+<link rel="stylesheet" href="../static/static-site.css">
+</head>
+<body class="fit">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="index.html">Alder Bank <span>Complaint workbench</span></a>
+  <nav aria-label="Main">
+    <ul class="app-nav">
+      
+      <li><a class="nav-link" href="index.html">Overview</a></li>
+      
+      <li><a class="nav-link" href="queue.html">Queue</a></li>
+      
+      <li><a class="nav-link" href="cases-AB-2026-00768.html" title="Last case opened: AB-2026-00768">Case</a></li>
+      
+      <li><a class="nav-link" href="departments.html">Departments</a></li>
+      
+      <li><a class="nav-link" href="team.html">Team</a></li>
+      
+      <li><a class="nav-link" href="pipeline.html">Pipeline</a></li>
+      
+      <li><a class="nav-link minor" href="policies.html">Policy library</a></li>
+      
+      <li><a class="nav-link minor" href="audit.html" aria-current="page">Audit log</a></li>
+      
+      <li><a class="nav-link minor" href="settings.html">Settings</a></li>
+      
+    </ul>
+  </nav>
+  <div class="role-form">
+    <span class="role-label" id="role-label">View as</span>
+    <div class="role-switch" role="group" aria-labelledby="role-label">
+      <a href="../handler/audit.html" class="role-btn" aria-pressed="false">Handler</a><a href="../specialist/audit.html" class="role-btn" aria-pressed="false">Specialist</a><a href="../team-lead/audit.html" class="role-btn" aria-pressed="false">Team lead</a>
+    </div>
+    <span class="sr-only">Demo role switch, not a login.</span>
+  </div>
+  <button type="button" class="help-button" data-open="help" aria-expanded="false" aria-controls="help">Help</button>
+</header>
+<main id="main" class="page" tabindex="-1">
+  <div class="page-head">
+    <h1 class="view-title">Audit log</h1>
+    <span class="chain-chip ok" role="status">Chain verified, 4,674 entries</span>
+  </div>
+  
+
+<div id="help" class="popover" role="dialog" aria-labelledby="help-title" hidden>
+  <h2 id="help-title">How this page works</h2>
+  <p>See every action, who took it and when.</p>
+  <ol><li>Read the chain check at the top.</li><li>Filter by case or by person.</li></ol>
+  <p class="small muted">Newest first, because the latest action is usually the one you want.</p>
+  <button type="button" data-close="help">Close</button>
+</div>
+
+  
+
+<div class="board ref">
+  <section class="panel s12" aria-labelledby="log-h">
+    <div class="panel-head"><h2 id="log-h">Entries</h2>
+      <form method="get" action="/audit" class="filters">
+        <label>Case <input disabled name="case" value="" maxlength="14" placeholder="AB-2026-00001"></label>
+        <label>Person <select disabled name="actor"><option value="">Anyone</option><option>H1</option><option>H2</option><option>H3</option><option>H4</option><option>H5</option><option>H6</option><option>H7</option><option>H8</option><option>S1</option><option>S2</option><option>S3</option><option>T1</option><option>system</option></select></label>
+        <button disabled title="Read-only preview" type="submit">Apply</button>
+        
+      </form>
+      <span class="aside">4,674 entries</span></div>
+    <div class="panel-body scroll">
+      
+      <table class="case-table compact">
+        <thead><tr><th scope="col">When</th><th scope="col">Who</th><th scope="col">Action</th><th scope="col">Case</th><th scope="col">Detail</th></tr></thead>
+        <tbody>
+<tr><td class="nowrap">2026-11-10 11:57</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01600</a></td><td>By email</td></tr>
+
+<tr><td class="nowrap">2026-11-10 11:36</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01599</a></td><td>By branch</td></tr>
+
+<tr><td class="nowrap">2026-11-10 11:25</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01598</a></td><td>By phone</td></tr>
+
+<tr><td class="nowrap">2026-11-10 11:22</td><td>Tom Fletcher, Handler</td><td>Opened</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01405</a></td><td></td></tr>
+
+<tr><td class="nowrap">2026-11-10 11:22</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01597</a></td><td>By phone</td></tr>
+
+<tr><td class="nowrap">2026-11-10 11:19</td><td>Marek Kowalski, Handler</td><td>Opened</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01586</a></td><td></td></tr>
+
+<tr><td class="nowrap">2026-11-10 11:03</td><td>Yusuf Rahman, Handler</td><td>Opened</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01577</a></td><td></td></tr>
+
+<tr><td class="nowrap">2026-11-10 10:56</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01596</a></td><td>By email</td></tr>
+
+<tr><td class="nowrap">2026-11-10 10:45</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01595</a></td><td>By letter</td></tr>
+
+<tr><td class="nowrap">2026-11-10 10:43</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01594</a></td><td>By secure message</td></tr>
+
+<tr><td class="nowrap">2026-11-10 10:37</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01593</a></td><td>By email</td></tr>
+
+<tr><td class="nowrap">2026-11-10 10:35</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01592</a></td><td>By email</td></tr>
+
+<tr><td class="nowrap">2026-11-10 10:31</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01591</a></td><td>By email</td></tr>
+
+<tr><td class="nowrap">2026-11-10 10:28</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01590</a></td><td>By phone</td></tr>
+
+<tr><td class="nowrap">2026-11-10 10:27</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01589</a></td><td>By secure message</td></tr>
+
+<tr><td class="nowrap">2026-11-10 10:24</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01588</a></td><td>By phone</td></tr>
+
+<tr><td class="nowrap">2026-11-10 10:19</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01587</a></td><td>By phone</td></tr>
+
+<tr><td class="nowrap">2026-11-10 10:14</td><td>Callum Reid, Specialist</td><td>Returned</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01405</a></td><td></td></tr>
+
+<tr><td class="nowrap">2026-11-10 10:09</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01586</a></td><td>By email</td></tr>
+
+<tr><td class="nowrap">2026-11-10 10:07</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01585</a></td><td>By email</td></tr>
+
+<tr><td class="nowrap">2026-11-10 10:03</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01584</a></td><td>By phone</td></tr>
+
+<tr><td class="nowrap">2026-11-10 09:56</td><td>Yusuf Rahman, Handler</td><td>Opened</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01359</a></td><td></td></tr>
+
+<tr><td class="nowrap">2026-11-10 09:56</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01583</a></td><td>By branch</td></tr>
+
+<tr><td class="nowrap">2026-11-10 09:54</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01582</a></td><td>By letter</td></tr>
+
+<tr><td class="nowrap">2026-11-10 09:52</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01581</a></td><td>By email</td></tr>
+
+<tr><td class="nowrap">2026-11-10 09:49</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01580</a></td><td>By phone</td></tr>
+
+<tr><td class="nowrap">2026-11-10 09:44</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01579</a></td><td>By mobile app</td></tr>
+
+<tr><td class="nowrap">2026-11-10 09:37</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01578</a></td><td>By phone</td></tr>
+
+<tr><td class="nowrap">2026-11-10 09:36</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01577</a></td><td>By email</td></tr>
+
+<tr><td class="nowrap">2026-11-10 09:30</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01576</a></td><td>By phone</td></tr>
+
+<tr><td class="nowrap">2026-11-10 09:30</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01575</a></td><td>By email</td></tr>
+
+<tr><td class="nowrap">2026-11-10 09:26</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01574</a></td><td>By mobile app</td></tr>
+
+<tr><td class="nowrap">2026-11-10 09:26</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01573</a></td><td>By mobile app</td></tr>
+
+<tr><td class="nowrap">2026-11-10 09:22</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01572</a></td><td>By phone</td></tr>
+
+<tr><td class="nowrap">2026-11-10 09:17</td><td>Amara Okafor, Handler</td><td>Opened</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01477</a></td><td></td></tr>
+
+<tr><td class="nowrap">2026-11-10 09:14</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01571</a></td><td>By branch</td></tr>
+
+<tr><td class="nowrap">2026-11-10 09:06</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01570</a></td><td>By mobile app</td></tr>
+
+<tr><td class="nowrap">2026-11-10 09:04</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01569</a></td><td>By phone</td></tr>
+
+<tr><td class="nowrap">2026-11-10 09:03</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01568</a></td><td>By secure message</td></tr>
+
+<tr><td class="nowrap">2026-11-10 09:01</td><td>Marek Kowalski, Handler</td><td>Opened</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01333</a></td><td></td></tr>
+
+<tr><td class="nowrap">2026-11-10 08:53</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01567</a></td><td>By mobile app</td></tr>
+
+<tr><td class="nowrap">2026-11-10 08:48</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01566</a></td><td>By phone</td></tr>
+
+<tr><td class="nowrap">2026-11-10 08:40</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01565</a></td><td>By secure message</td></tr>
+
+<tr><td class="nowrap">2026-11-10 08:38</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01564</a></td><td>By phone</td></tr>
+
+<tr><td class="nowrap">2026-11-10 08:37</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01563</a></td><td>By secure message</td></tr>
+
+<tr><td class="nowrap">2026-11-10 08:33</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01562</a></td><td>By mobile app</td></tr>
+
+<tr><td class="nowrap">2026-11-10 08:31</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01561</a></td><td>By branch</td></tr>
+
+<tr><td class="nowrap">2026-11-10 08:12</td><td>Marek Kowalski, Handler</td><td>Opened</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01530</a></td><td></td></tr>
+
+<tr><td class="nowrap">2026-11-10 07:55</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01560</a></td><td>By email</td></tr>
+
+<tr><td class="nowrap">2026-11-10 07:33</td><td>System</td><td>Received</td>
+  <td><a class="plain-id" href="#" aria-disabled="true">AB-2026-01559</a></td><td>By phone</td></tr>
+
+
+<tr class="more-row"><td colspan="5"><a class="load-more" href="audit.html">Load older (4,624 left)</a></td></tr>
+</tbody>
+      </table>
+      
+    </div>
+  </section>
+</div>
+
+
+</main>
+<footer class="footer">Read-only preview: buttons and forms are off here. Run the app for the full product. Not an Ankura product. All data synthetic.</footer>
+</body>
+</html>

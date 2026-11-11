@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="htmx-config" content='{"includeIndicatorStyles": false, "allowEval": false}'>
+<title>Departments · Alder Bank complaints</title>
+<link rel="stylesheet" href="../static/app.css">
+<link rel="stylesheet" href="../static/layout.css">
+<link rel="stylesheet" href="../static/work.css">
+<script src="../static/app.js" defer></script>
+<link rel="stylesheet" href="../static/static-site.css">
+</head>
+<body class="fit">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="index.html">Alder Bank <span>Complaint workbench</span></a>
+  <nav aria-label="Main">
+    <ul class="app-nav">
+      
+      <li><a class="nav-link" href="index.html">Overview</a></li>
+      
+      <li><a class="nav-link" href="queue.html">Queue</a></li>
+      
+      <li><a class="nav-link" href="cases-AB-2026-00195.html" title="Last case opened: AB-2026-00195">Case</a></li>
+      
+      <li><a class="nav-link" href="departments.html" aria-current="page">Departments</a></li>
+      
+      <li><a class="nav-link" href="team.html">Team</a></li>
+      
+      <li><a class="nav-link" href="pipeline.html">Pipeline</a></li>
+      
+      <li><a class="nav-link minor" href="policies.html">Policy library</a></li>
+      
+      <li><a class="nav-link minor" href="audit.html">Audit log</a></li>
+      
+      <li><a class="nav-link minor" href="settings.html">Settings</a></li>
+      
+    </ul>
+  </nav>
+  <div class="role-form">
+    <span class="role-label" id="role-label">View as</span>
+    <div class="role-switch" role="group" aria-labelledby="role-label">
+      <a href="../handler/departments--department-Financial-20difficulty.html" class="role-btn" aria-pressed="false">Handler</a><a href="../specialist/departments--department-Financial-20difficulty.html" class="role-btn" aria-pressed="false">Specialist</a><a href="../team-lead/departments--department-Financial-20difficulty.html" class="role-btn" aria-pressed="true">Team lead</a>
+    </div>
+    <span class="sr-only">Demo role switch, not a login.</span>
+  </div>
+  <button type="button" class="help-button" data-open="help" aria-expanded="false" aria-controls="help">Help</button>
+</header>
+<main id="main" class="page" tabindex="-1">
+  <div class="page-head">
+    <h1 class="view-title">Departments</h1>
+    <form class="alerts-form" method="post" action="/prefs/alerts">
+
+<ul class="strip" aria-label="Deadlines">
+  <li><a href="queue--owner-all-due-past.html" class="bad">Past deadline <b>77</b></a></li>
+  <li><a href="queue--owner-all-due-soon.html">Due in 5 business days <b>147</b></a></li>
+  <li><a href="queue--owner-all-urgent-1.html">Urgent <b>360</b></a></li>
+  <li><a href="queue--owner-all-department-General-service-type-Website-or-app.html">Rises <b>1</b></a></li>
+  <li><button disabled title="Read-only preview" type="submit" name="show" value="0" class="strip-toggle" title="Hide the deadline pills on every page">Hide</button></li>
+</ul>
+
+</form>
+  </div>
+  
+
+<div id="help" class="popover" role="dialog" aria-labelledby="help-title" hidden>
+  <h2 id="help-title">How this page works</h2>
+  <p>See one team&#39;s workload and the handovers waiting for it.</p>
+  <ol><li>Choose a department.</li><li>Accept a handover, or return it with a reason.</li><li>Check which fields are most often missing.</li></ol>
+  <p class="small muted">One department at a time so the list stays short.</p>
+  <button type="button" data-close="help">Close</button>
+</div>
+
+  
+<div class="board departments">
+  
+  <ul class="dept-chips" aria-label="Departments">
+    
+    <li><a href="departments.html">All <b>1,284</b></a></li>
+    
+    <li><a href="departments--department-General-service.html">General service <b>564</b></a></li>
+    
+    <li><a href="departments--department-Financial-difficulty.html" aria-current="page">Financial difficulty <b>183</b></a></li>
+    
+    <li><a href="departments--department-Fraud-claims.html">Fraud claims <b>155</b></a></li>
+    
+    <li><a href="departments--department-Bereavement.html">Bereavement <b>97</b></a></li>
+    
+    <li><a href="departments--department-Mis-selling-review.html">Mis-selling review <b>96</b></a></li>
+    
+    <li><a href="departments--department-Data-protection.html">Data protection <b>24</b></a></li>
+    
+    
+    
+  </ul>
+  
+
+  <section class="panel s12 kpi-panel" aria-label="Figures for Financial difficulty">
+    <ul class="kpis five">
+      
+      <li class="kpi"><span class="kpi-label">Open</span>
+        <span class="kpi-value"><a href="queue.html">183</a></span></li>
+      
+      <li class="kpi"><span class="kpi-label">Past deadline</span>
+        <span class="kpi-value bad"><a href="queue.html">4</a></span></li>
+      
+      <li class="kpi"><span class="kpi-label">Due in 5 business days</span>
+        <span class="kpi-value"><a href="queue.html">19</a></span></li>
+      
+      <li class="kpi"><span class="kpi-label"><abbr title="Share of handovers a specialist sent back at least once">Handovers returned</abbr></span>
+        <span class="kpi-value">43%</span></li>
+      
+      <li class="kpi"><span class="kpi-label">Most missing field</span>
+        <span class="kpi-value word">Monthly income</span></li>
+      
+    </ul>
+  </section>
+
+  <section class="panel s7" aria-labelledby="wait-h">
+    <div class="panel-head"><h2 id="wait-h">Waiting handovers</h2><a class="aside" href="queue.html">56 waiting</a></div>
+    <div class="panel-body scroll">
+      
+      <table class="case-table compact waiting">
+        <thead><tr><th scope="col">Case</th><th scope="col">Type</th><th scope="col">Channel</th><th scope="col">Deadline</th><th scope="col">Fields</th></tr></thead>
+        <tbody>
+
+<tr><th scope="row"><a href="cases-AB-2026-00187.html" class="plain-id">AB-2026-00187</a></th>
+  <td>Payment scam</td><td>Letter</td><td><span class="due late" title="Business days">26 days late</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00058.html" class="plain-id">AB-2026-00058</a></th>
+  <td>Account administration</td><td>Branch</td><td><span class="due late" title="Business days">12 days late</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00621.html" class="plain-id">AB-2026-00621</a></th>
+  <td>Payment scam</td><td>Mobile app</td><td><span class="due late" title="Business days">10 days late</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00229</a></th>
+  <td>Account administration</td><td>Mobile app</td><td><span class="due soon" title="Business days">1 day left</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00258</a></th>
+  <td>Account administration</td><td>Letter</td><td><span class="due soon" title="Business days">3 days left</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00268</a></th>
+  <td>Service</td><td>Mobile app</td><td><span class="due soon" title="Business days">3 days left</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00285</a></th>
+  <td>Account administration</td><td>Mobile app</td><td><span class="due soon" title="Business days">4 days left</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00290</a></th>
+  <td>Fees and charges</td><td>Mobile app</td><td><span class="due soon" title="Business days">4 days left</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00297</a></th>
+  <td>Service</td><td>Phone</td><td><span class="due soon" title="Business days">4 days left</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00300</a></th>
+  <td>Service</td><td>Branch</td><td><span class="due soon" title="Business days">4 days left</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00301</a></th>
+  <td>Fees and charges</td><td>Email</td><td><span class="due soon" title="Business days">4 days left</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00308</a></th>
+  <td>Fees and charges</td><td>Phone</td><td><span class="due soon" title="Business days">4 days left</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00317</a></th>
+  <td>Account administration</td><td>Letter</td><td><span class="due soon" title="Business days">5 days left</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00321</a></th>
+  <td>Other</td><td>Email</td><td><span class="due soon" title="Business days">5 days left</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00323</a></th>
+  <td>Service</td><td>Email</td><td><span class="due soon" title="Business days">5 days left</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00325</a></th>
+  <td>Fees and charges</td><td>Letter</td><td><span class="due soon" title="Business days">5 days left</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00332</a></th>
+  <td>Account administration</td><td>Phone</td><td><span class="due soon" title="Business days">5 days left</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00335</a></th>
+  <td>Account administration</td><td>Mobile app</td><td><span class="due soon" title="Business days">5 days left</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00364</a></th>
+  <td>Account administration</td><td>Branch</td><td><span class="due" title="Business days">6 days left</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00373</a></th>
+  <td>Account administration</td><td>Phone</td><td><span class="due" title="Business days">6 days left</span></td>
+  <td><span class="tag warm" title="Missing: Monthly income, Monthly outgoings, Total arrears, Vulnerability noted, Payment plan offered">5 fields missing</span></td>
+  </tr>
+
+
+<tr class="more-tr"><td colspan="5"><a class="load-more" href="queue.html">Load more (36 left)</a></td></tr>
+</tbody>
+      </table>
+      
+    </div>
+  </section>
+
+  <section class="panel tabs s5" aria-labelledby="mix-h">
+    <input type="radio" name="mix" id="mix-1" class="sr-only" checked><input type="radio" name="mix" id="mix-2" class="sr-only"><input type="radio" name="mix" id="mix-3" class="sr-only">
+    <div class="panel-head"><h2 id="mix-h">Open cases</h2>
+      <div class="tab-labels"><label for="mix-1">Channel</label><label for="mix-2">Type</label><label for="mix-3">Missing fields</label></div></div>
+    <div class="panel-body pane p1"><ul class="track"><li><a class="tk-label" href="departments.html">Phone</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">38</b></li><li><a class="tk-label" href="departments.html">Email</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="94.74%" height="100%" rx="5"/></svg><b class="tk-val">36</b></li><li><a class="tk-label" href="departments.html">Mobile app</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="86.84%" height="100%" rx="5"/></svg><b class="tk-val">33</b></li><li><a class="tk-label" href="departments.html">Secure message</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="86.84%" height="100%" rx="5"/></svg><b class="tk-val">33</b></li><li><a class="tk-label" href="departments.html">Branch</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="78.95%" height="100%" rx="5"/></svg><b class="tk-val">30</b></li><li><a class="tk-label" href="departments.html">Letter</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="34.21%" height="100%" rx="5"/></svg><b class="tk-val">13</b></li></ul></div>
+    <div class="panel-body pane p2"><ul class="track"><li><a class="tk-label" href="departments.html">Fees and charges</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">68</b></li><li><a class="tk-label" href="departments.html">Account administration</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="91.18%" height="100%" rx="5"/></svg><b class="tk-val">62</b></li><li><a class="tk-label" href="departments.html">Service</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="63.24%" height="100%" rx="5"/></svg><b class="tk-val">43</b></li><li><a class="tk-label" href="departments.html">Website or app</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="5.88%" height="100%" rx="5"/></svg><b class="tk-val">4</b></li><li><a class="tk-label" href="departments.html">Other</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="4.41%" height="100%" rx="5"/></svg><b class="tk-val">3</b></li><li><a class="tk-label" href="departments.html">Payment scam</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="4.41%" height="100%" rx="5"/></svg><b class="tk-val">3</b></li></ul></div>
+    <div class="panel-body pane p3"><ul class="track"><li><span class="tk-label">Monthly income</span><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">183</b></li><li><span class="tk-label">Monthly outgoings</span><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">183</b></li><li><span class="tk-label">Payment plan offered</span><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">183</b></li><li><span class="tk-label">Total arrears</span><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">183</b></li><li><span class="tk-label">Vulnerability noted</span><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">183</b></li></ul></div>
+  </section>
+</div>
+
+</main>
+<footer class="footer">Read-only preview: buttons and forms are off here. Run the app for the full product. Not an Ankura product. All data synthetic.</footer>
+</body>
+</html>

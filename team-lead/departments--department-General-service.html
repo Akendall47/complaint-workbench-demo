@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="htmx-config" content='{"includeIndicatorStyles": false, "allowEval": false}'>
+<title>Departments · Alder Bank complaints</title>
+<link rel="stylesheet" href="../static/app.css">
+<link rel="stylesheet" href="../static/layout.css">
+<link rel="stylesheet" href="../static/work.css">
+<script src="../static/app.js" defer></script>
+<link rel="stylesheet" href="../static/static-site.css">
+</head>
+<body class="fit">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="index.html">Alder Bank <span>Complaint workbench</span></a>
+  <nav aria-label="Main">
+    <ul class="app-nav">
+      
+      <li><a class="nav-link" href="index.html">Overview</a></li>
+      
+      <li><a class="nav-link" href="queue.html">Queue</a></li>
+      
+      <li><a class="nav-link" href="cases-AB-2026-00768.html" title="Last case opened: AB-2026-00768">Case</a></li>
+      
+      <li><a class="nav-link" href="departments.html" aria-current="page">Departments</a></li>
+      
+      <li><a class="nav-link" href="team.html">Team</a></li>
+      
+      <li><a class="nav-link" href="pipeline.html">Pipeline</a></li>
+      
+      <li><a class="nav-link minor" href="policies.html">Policy library</a></li>
+      
+      <li><a class="nav-link minor" href="audit.html">Audit log</a></li>
+      
+      <li><a class="nav-link minor" href="settings.html">Settings</a></li>
+      
+    </ul>
+  </nav>
+  <div class="role-form">
+    <span class="role-label" id="role-label">View as</span>
+    <div class="role-switch" role="group" aria-labelledby="role-label">
+      <a href="../handler/departments--department-General-service.html" class="role-btn" aria-pressed="false">Handler</a><a href="../specialist/index.html" class="role-btn" aria-pressed="false">Specialist</a><a href="../team-lead/departments--department-General-service.html" class="role-btn" aria-pressed="true">Team lead</a>
+    </div>
+    <span class="sr-only">Demo role switch, not a login.</span>
+  </div>
+  <button type="button" class="help-button" data-open="help" aria-expanded="false" aria-controls="help">Help</button>
+</header>
+<main id="main" class="page" tabindex="-1">
+  <div class="page-head">
+    <h1 class="view-title">Departments</h1>
+    <form class="alerts-form" method="post" action="/prefs/alerts">
+
+<ul class="strip" aria-label="Deadlines">
+  <li><a href="queue--owner-all-due-past.html" class="bad">Past deadline <b>77</b></a></li>
+  <li><a href="queue--owner-all-due-soon.html">Due in 5 business days <b>147</b></a></li>
+  <li><a href="queue--owner-all-urgent-1.html">Urgent <b>360</b></a></li>
+  <li><a href="queue--owner-all-department-General-service-type-Website-or-app.html">Rises <b>1</b></a></li>
+  <li><button disabled title="Read-only preview" type="submit" name="show" value="0" class="strip-toggle" title="Hide the deadline pills on every page">Hide</button></li>
+</ul>
+
+</form>
+  </div>
+  
+
+<div id="help" class="popover" role="dialog" aria-labelledby="help-title" hidden>
+  <h2 id="help-title">How this page works</h2>
+  <p>See one team&#39;s workload and the handovers waiting for it.</p>
+  <ol><li>Choose a department.</li><li>Accept a handover, or return it with a reason.</li><li>Check which fields are most often missing.</li></ol>
+  <p class="small muted">One department at a time so the list stays short.</p>
+  <button type="button" data-close="help">Close</button>
+</div>
+
+  
+<div class="board departments">
+  
+  <ul class="dept-chips" aria-label="Departments">
+    
+    <li><a href="departments.html">All <b>1,284</b></a></li>
+    
+    <li><a href="departments--department-General-service.html" aria-current="page">General service <b>564</b></a></li>
+    
+    <li><a href="departments--department-Financial-difficulty.html">Financial difficulty <b>183</b></a></li>
+    
+    <li><a href="departments--department-Fraud-claims.html">Fraud claims <b>155</b></a></li>
+    
+    <li><a href="departments--department-Bereavement.html">Bereavement <b>97</b></a></li>
+    
+    <li><a href="departments--department-Mis-selling-review.html">Mis-selling review <b>96</b></a></li>
+    
+    <li><a href="departments--department-Data-protection.html">Data protection <b>24</b></a></li>
+    
+    
+    
+  </ul>
+  
+
+  <section class="panel s12 kpi-panel" aria-label="Figures for General service">
+    <ul class="kpis five">
+      
+      <li class="kpi"><span class="kpi-label">Open</span>
+        <span class="kpi-value"><a href="queue.html">564</a></span></li>
+      
+      <li class="kpi"><span class="kpi-label">Past deadline</span>
+        <span class="kpi-value bad"><a href="queue.html">21</a></span></li>
+      
+      <li class="kpi"><span class="kpi-label">Due in 5 business days</span>
+        <span class="kpi-value"><a href="queue.html">49</a></span></li>
+      
+      <li class="kpi"><span class="kpi-label"><abbr title="Share of handovers a specialist sent back at least once">Handovers returned</abbr></span>
+        <span class="kpi-value">35%</span></li>
+      
+      <li class="kpi"><span class="kpi-label">Most missing field</span>
+        <span class="kpi-value word">Branch or channel</span></li>
+      
+    </ul>
+  </section>
+
+  <section class="panel s7" aria-labelledby="wait-h">
+    <div class="panel-head"><h2 id="wait-h">Waiting handovers</h2><a class="aside" href="queue.html">180 waiting</a></div>
+    <div class="panel-body scroll">
+      
+      <table class="case-table compact waiting">
+        <thead><tr><th scope="col">Case</th><th scope="col">Type</th><th scope="col">Channel</th><th scope="col">Deadline</th><th scope="col">Fields</th></tr></thead>
+        <tbody>
+
+<tr><th scope="row"><a href="cases-AB-2026-00017.html" class="plain-id">AB-2026-00017</a></th>
+  <td>Website or app</td><td>Email</td><td><span class="due late" title="Business days">18 days late</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00417.html" class="plain-id">AB-2026-00417</a></th>
+  <td>Fraud or security</td><td>Secure message</td><td><span class="due late" title="Business days">17 days late</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00028.html" class="plain-id">AB-2026-00028</a></th>
+  <td>Website or app</td><td>Email</td><td><span class="due late" title="Business days">16 days late</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00033.html" class="plain-id">AB-2026-00033</a></th>
+  <td>Fees and charges</td><td>Email</td><td><span class="due late" title="Business days">15 days late</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00053.html" class="plain-id">AB-2026-00053</a></th>
+  <td>Account administration</td><td>Phone</td><td><span class="due late" title="Business days">12 days late</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00061.html" class="plain-id">AB-2026-00061</a></th>
+  <td>Service</td><td>Branch</td><td><span class="due late" title="Business days">11 days late</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00081.html" class="plain-id">AB-2026-00081</a></th>
+  <td>Website or app</td><td>Secure message</td><td><span class="due late" title="Business days">10 days late</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="cases-AB-2026-00089.html" class="plain-id">AB-2026-00089</a></th>
+  <td>Website or app</td><td>Branch</td><td><span class="due late" title="Business days">9 days late</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00117</a></th>
+  <td>Service</td><td>Mobile app</td><td><span class="due late" title="Business days">6 days late</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00166</a></th>
+  <td>Service</td><td>Email</td><td><span class="due late" title="Business days">3 days late</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00180</a></th>
+  <td>Website or app</td><td>Phone</td><td><span class="due late" title="Business days">2 days late</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00202</a></th>
+  <td>Fees and charges</td><td>Email</td><td><span class="due today" title="Business days">Due today</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00212</a></th>
+  <td>Website or app</td><td>Email</td><td><span class="due soon" title="Business days">1 day left</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00220</a></th>
+  <td>Website or app</td><td>Phone</td><td><span class="due soon" title="Business days">1 day left</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00261</a></th>
+  <td>Service</td><td>Mobile app</td><td><span class="due soon" title="Business days">3 days left</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00275</a></th>
+  <td>Website or app</td><td>Email</td><td><span class="due soon" title="Business days">3 days left</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00276</a></th>
+  <td>Account administration</td><td>Secure message</td><td><span class="due soon" title="Business days">3 days left</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00277</a></th>
+  <td>Service</td><td>Phone</td><td><span class="due soon" title="Business days">3 days left</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00278</a></th>
+  <td>Fees and charges</td><td>Email</td><td><span class="due soon" title="Business days">3 days left</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+<tr><th scope="row"><a href="#" aria-disabled="true" class="plain-id">AB-2026-00282</a></th>
+  <td>Account administration</td><td>Phone</td><td><span class="due soon" title="Business days">4 days left</span></td>
+  <td><span class="tag warm" title="Missing: Issue summary, Date of incident, Branch or channel, Customer outcome wanted">4 fields missing</span></td>
+  </tr>
+
+
+<tr class="more-tr"><td colspan="5"><a class="load-more" href="queue.html">Load more (160 left)</a></td></tr>
+</tbody>
+      </table>
+      
+    </div>
+  </section>
+
+  <section class="panel tabs s5" aria-labelledby="mix-h">
+    <input type="radio" name="mix" id="mix-1" class="sr-only" checked><input type="radio" name="mix" id="mix-2" class="sr-only"><input type="radio" name="mix" id="mix-3" class="sr-only">
+    <div class="panel-head"><h2 id="mix-h">Open cases</h2>
+      <div class="tab-labels"><label for="mix-1">Channel</label><label for="mix-2">Type</label><label for="mix-3">Missing fields</label></div></div>
+    <div class="panel-body pane p1"><ul class="track"><li><a class="tk-label" href="departments.html">Phone</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">149</b></li><li><a class="tk-label" href="departments.html">Email</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="73.83%" height="100%" rx="5"/></svg><b class="tk-val">110</b></li><li><a class="tk-label" href="departments.html">Mobile app</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="73.15%" height="100%" rx="5"/></svg><b class="tk-val">109</b></li><li><a class="tk-label" href="departments.html">Secure message</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="63.09%" height="100%" rx="5"/></svg><b class="tk-val">94</b></li><li><a class="tk-label" href="departments.html">Branch</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="43.62%" height="100%" rx="5"/></svg><b class="tk-val">65</b></li><li><a class="tk-label" href="departments.html">Letter</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="24.83%" height="100%" rx="5"/></svg><b class="tk-val">37</b></li></ul></div>
+    <div class="panel-body pane p2"><ul class="track"><li><a class="tk-label" href="departments.html">Service</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">198</b></li><li><a class="tk-label" href="departments.html">Website or app</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="79.29%" height="100%" rx="5"/></svg><b class="tk-val">157</b></li><li><a class="tk-label" href="departments.html">Fees and charges</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="54.55%" height="100%" rx="5"/></svg><b class="tk-val">108</b></li><li><a class="tk-label" href="departments.html">Account administration</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="43.43%" height="100%" rx="5"/></svg><b class="tk-val">86</b></li><li><a class="tk-label" href="departments.html">Other</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="5.05%" height="100%" rx="5"/></svg><b class="tk-val">10</b></li><li><a class="tk-label" href="departments.html">Fraud or security</a><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="2.53%" height="100%" rx="5"/></svg><b class="tk-val">5</b></li></ul></div>
+    <div class="panel-body pane p3"><ul class="track"><li><span class="tk-label">Branch or channel</span><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">564</b></li><li><span class="tk-label">Customer outcome wanted</span><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">564</b></li><li><span class="tk-label">Date of incident</span><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">564</b></li><li><span class="tk-label">Issue summary</span><svg class="tk-bar" aria-hidden="true" focusable="false"><rect class="tk-bg" width="100%" height="100%" rx="5"/><rect class="tk-fill" width="100%" height="100%" rx="5"/></svg><b class="tk-val">564</b></li></ul></div>
+  </section>
+</div>
+
+</main>
+<footer class="footer">Read-only preview: buttons and forms are off here. Run the app for the full product. Not an Ankura product. All data synthetic.</footer>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="htmx-config" content='{"includeIndicatorStyles": false, "allowEval": false}'>
+<title>Settings · Alder Bank complaints</title>
+<link rel="stylesheet" href="../static/app.css">
+<link rel="stylesheet" href="../static/layout.css">
+<link rel="stylesheet" href="../static/reference.css">
+<script src="../static/app.js" defer></script>
+<link rel="stylesheet" href="../static/static-site.css">
+</head>
+<body class="fit">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="index.html">Alder Bank <span>Complaint workbench</span></a>
+  <nav aria-label="Main">
+    <ul class="app-nav">
+      
+      <li><a class="nav-link" href="index.html">Overview</a></li>
+      
+      <li><a class="nav-link" href="queue.html">Queue</a></li>
+      
+      <li><a class="nav-link" href="cases-AB-2026-00768.html" title="Last case opened: AB-2026-00768">Case</a></li>
+      
+      <li><a class="nav-link" href="departments.html">Departments</a></li>
+      
+      <li><a class="nav-link" href="team.html">Team</a></li>
+      
+      <li><a class="nav-link" href="pipeline.html">Pipeline</a></li>
+      
+      <li><a class="nav-link minor" href="policies.html">Policy library</a></li>
+      
+      <li><a class="nav-link minor" href="audit.html">Audit log</a></li>
+      
+      <li><a class="nav-link minor" href="settings.html" aria-current="page">Settings</a></li>
+      
+    </ul>
+  </nav>
+  <div class="role-form">
+    <span class="role-label" id="role-label">View as</span>
+    <div class="role-switch" role="group" aria-labelledby="role-label">
+      <a href="../handler/settings.html" class="role-btn" aria-pressed="false">Handler</a><a href="../specialist/settings.html" class="role-btn" aria-pressed="false">Specialist</a><a href="../team-lead/settings.html" class="role-btn" aria-pressed="true">Team lead</a>
+    </div>
+    <span class="sr-only">Demo role switch, not a login.</span>
+  </div>
+  <button type="button" class="help-button" data-open="help" aria-expanded="false" aria-controls="help">Help</button>
+</header>
+<main id="main" class="page" tabindex="-1">
+  <div class="page-head">
+    <h1 class="view-title">Settings</h1>
+    
+  </div>
+  
+
+<div id="help" class="popover" role="dialog" aria-labelledby="help-title" hidden>
+  <h2 id="help-title">How this page works</h2>
+  <p>Read the few settings that shape the results.</p>
+  <ol><li>Read the rules in plain words.</li><li>Check where the data comes from.</li></ol>
+  <p class="small muted">Read-only, so nobody changes a rule by accident.</p>
+  <button type="button" data-close="help">Close</button>
+</div>
+
+  
+<div class="board ref settings">
+  <section class="panel s6 ds" id="data-sources" aria-labelledby="ds-h">
+    <div class="panel-head"><h2 id="ds-h">Where the data comes from</h2></div>
+    <div class="panel-body scroll"><p>Every complaint, customer and member of staff here is synthetic. workbench/generate.py makes them from a fixed seed. No real customer data is used.</p>
+<table class="case-table compact sources">
+  <thead><tr><th scope="col">What the demo follows</th><th scope="col">Public source</th><th scope="col">Date</th><th scope="col">Link</th></tr></thead>
+  <tbody>
+  
+  <tr><td>Complaint clocks: a final response within 8 weeks; for payment services, a response normally within 15 business days and a final response within 35 business days</td><td>FCA, How to complain</td><td>Updated 20 May 2025</td>
+    <td><a href="https://www.fca.org.uk/consumers/how-complain" target="_blank" rel="noopener noreferrer" title="https://www.fca.org.uk/consumers/how-complain">Open<span class="sr-only"> FCA, How to complain, opens in a new tab</span></a></td></tr>
+  
+  <tr><td>UK complaint volume, closure speed and upheld rate: 1.85 million complaints in Jan to Jun 2026, up 6.3% on H2 2025; 44.8% closed within 3 days and 94.5% within 8 weeks; 54.8% upheld. Current accounts were the most complained about</td><td>FCA, Complaints data 2026 H1</td><td>22 Oct 2026</td>
+    <td><a href="https://www.fca.org.uk/data/complaints-data-2026-h1" target="_blank" rel="noopener noreferrer" title="https://www.fca.org.uk/data/complaints-data-2026-h1">Open<span class="sr-only"> FCA, Complaints data 2026 H1, opens in a new tab</span></a></td></tr>
+  
+  <tr><td>Banking&#39;s share of complaints: banking and credit cards were 857,757 of 1,740,909 complaints, 49% (share worked out here)</td><td>FCA, Aggregate complaints data 2025 H2</td><td>H2 2025 data</td>
+    <td><a href="https://www.fca.org.uk/data/aggregate-complaints-data-2025-h2" target="_blank" rel="noopener noreferrer" title="https://www.fca.org.uk/data/aggregate-complaints-data-2025-h2">Open<span class="sr-only"> FCA, Aggregate complaints data 2025 H2, opens in a new tab</span></a></td></tr>
+  
+  <tr><td>Fraud and scams are a large share of current-account complaints: 18,900 of 32,900 cases at the ombudsman in 2025/26</td><td>Financial Ombudsman Service, Annual complaints data 2025/26</td><td>21 May 2026</td>
+    <td><a href="https://www.financial-ombudsman.org.uk/data-insight/our-insight/annual-complaints-data-and-insight-2025-26" target="_blank" rel="noopener noreferrer" title="https://www.financial-ombudsman.org.uk/data-insight/our-insight/annual-complaints-data-and-insight-2025-26">Open<span class="sr-only"> Financial Ombudsman Service, Annual complaints data 2025/26, opens in a new tab</span></a></td></tr>
+  
+  <tr><td>Fraud volumes in 2025: authorised push payment fraud £576.4m in 248,070 cases; unauthorised fraud £703.4m in 3.81m cases</td><td>UK Finance, Fraud Report 2026</td><td>15 Jun 2026</td>
+    <td><a href="https://www.ukfinance.org.uk/news-and-insight/press-release/fraud-report-2026-press-release" target="_blank" rel="noopener noreferrer" title="https://www.ukfinance.org.uk/news-and-insight/press-release/fraud-report-2026-press-release">Open<span class="sr-only"> UK Finance, Fraud Report 2026, opens in a new tab</span></a></td></tr>
+  
+  <tr><td>Vulnerable customers: “especially susceptible to harm …”, the definition behind the urgent rule</td><td>FCA, FG21/1 guidance for firms</td><td>23 Feb 2021</td>
+    <td><a href="https://www.fca.org.uk/publications/finalised-guidance/guidance-firms-fair-treatment-vulnerable-customers" target="_blank" rel="noopener noreferrer" title="https://www.fca.org.uk/publications/finalised-guidance/guidance-firms-fair-treatment-vulnerable-customers">Open<span class="sr-only"> FCA, FG21/1 guidance for firms, opens in a new tab</span></a></td></tr>
+  
+  <tr><td>Authorised push payment reimbursement: from 7 Oct 2024, a cap of £85,000 and an outcome within 35 business days</td><td>Payment Systems Regulator, APP fraud reimbursement</td><td>In force 7 Oct 2024</td>
+    <td><a href="https://www.psr.org.uk/information-for-consumers/app-fraud-reimbursement-protections/" target="_blank" rel="noopener noreferrer" title="https://www.psr.org.uk/information-for-consumers/app-fraud-reimbursement-protections/">Open<span class="sr-only"> Payment Systems Regulator, APP fraud reimbursement, opens in a new tab</span></a></td></tr>
+  
+  </tbody>
+</table>
+<p class="muted small-note">Public figures give context. The numbers in this demo are generated, not copies of them.</p>
+<h3>Our assumptions (no public source)</h3>
+<dl class="pairs assumptions">
+  <dt>Channel mix</dt><dd>how many complaints come by phone, email, app, secure message, branch and letter</dd><dt>Hour-of-day pattern</dt><dd>busiest from 9 to 11 in the morning</dd><dt>Volume ramp</dt><dd>recent weeks are busier than older ones</dd><dt>Return rate</dt><dd>34% of handovers are sent back for more information</dd><dt>Handover field list</dt><dd>the fields each department needs before it can take a case</dd><dt>Open share</dt><dd>about 80% of cases are still open</dd>
+</dl></div>
+  </section>
+
+  <section class="panel s3" aria-labelledby="rules-h">
+    <div class="panel-head"><h2 id="rules-h">Rules</h2></div>
+    <div class="panel-body scroll">
+      <dl class="rules">
+        <dt>Routing threshold</dt><dd>A complaint goes to a department when the model is at least 0.45 sure, else Needs routing.</dd>
+        <dt>Deadlines</dt><dd>Payment: 15 business days, 35 when extended. Others: 8 weeks.</dd>
+        <dt>Unusual rise</dt><dd>At least 2.0 times the usual weekly cases (last 4 weeks) and at least 10 cases.</dd>
+        <dt>Urgent</dt><dd>Deadline past or within 5 business days, or the notes mention vulnerability, money hardship or ongoing fraud. A person can also set it, with a reason.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="panel s3" aria-labelledby="model-h">
+    <div class="panel-head"><h2 id="model-h">Model</h2></div>
+    <div class="panel-body">
+      <p class="model-name">qwen3:4b-instruct</p>
+      <p class="muted">Prompt version 2</p>
+      <p class="muted note-line">Drafts recorded in advance, no network call when you use the app.</p>
+    </div>
+  </section>
+
+  <section class="panel s6" aria-labelledby="add-h">
+    <div class="panel-head"><h2 id="add-h">Add a test complaint</h2></div>
+    <div class="panel-body scroll">
+      
+      
+      <form method="post" action="/intake" class="add-form">
+        <label for="text">Complaint text (fictional)</label>
+        <textarea disabled id="text" name="text" rows="2" maxlength="5000" required></textarea>
+        <div class="intake-row">
+          <label for="source">Where it came from</label>
+          <select disabled id="source" name="source"><option>phone</option><option>mobile app</option><option>secure message</option><option>branch</option><option>letter</option><option>email</option></select>
+          <button disabled title="Read-only preview" type="submit" class="primary">Add test complaint</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+
+</main>
+<footer class="footer">Read-only preview: buttons and forms are off here. Run the app for the full product. Not an Ankura product. All data synthetic.</footer>
+</body>
+</html>
