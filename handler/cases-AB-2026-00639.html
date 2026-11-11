@@ -96,7 +96,7 @@
       <form method="post" action="/cases/AB-2026-00639/urgent"><input type="hidden" name="version" value="0"><input type="hidden" name="step" value="1"><input type="hidden" name="all" value="1">
         <b>Urgency</b>
         <label>Mark as <select disabled name="urgent"><option value="1">Urgent</option><option value="0" selected>Not urgent</option></select></label>
-        <label>Reason <input disabled name="reason" maxlength="500"></label>
+        <label>Reason <input disabled name="reason" maxlength="500" required></label>
         <button disabled title="Needs the full app. Try case AB-2026-00768 as Handler." type="submit">Save</button>
       </form>
       
@@ -104,7 +104,7 @@
   </details>
   
   <details class="drop"><summary>History</summary>
-    <ol class="drop-body trail"><li><span class="muted">2026-10-06 16:03 · system (system)</span> received</li><li><span class="muted">2026-10-07 16:43 · H1 (handler)</span> opened</li><li><span class="muted">2026-10-12 21:31 · H1 (handler)</span> handed_over</li></ol>
+    <ol class="drop-body trail"><li><span class="muted">2026-10-06 16:03 · System</span> received</li><li><span class="muted">2026-10-07 16:43 · Priya Nair, Handler</span> opened</li><li><span class="muted">2026-10-12 21:31 · Priya Nair, Handler</span> handed_over</li></ol>
   </details>
   </span>
 </header>
@@ -118,7 +118,7 @@
     <span class="aside">Personal details masked</span>
     <details class="drop"><summary>Unmask</summary>
       <form class="drop-body" method="post" action="/cases/AB-2026-00639/unmask"><input type="hidden" name="version" value="0"><input type="hidden" name="step" value="1"><input type="hidden" name="all" value="1">
-        <label>Reason (logged) <input disabled name="reason" maxlength="500"></label>
+        <label>Reason (logged) <input disabled name="reason" maxlength="500" required></label>
         <button disabled title="Needs the full app. Try case AB-2026-00768 as Handler." type="submit">Show unmasked</button>
       </form>
     </details>
